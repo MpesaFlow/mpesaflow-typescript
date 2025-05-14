@@ -12,6 +12,9 @@ targets:
     mpesa-flow:
         target: typescript
         source: MpesaFlow API
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/mpesaflow/sdks/mpesa-flow-api-typescript-code-samples
