@@ -1,0 +1,155 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/products"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.products.list()
+      before: sdk.Products.get_/products()
+      created_at: 1747241381720
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/transactions/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.transactions.delete()
+      before: sdk.Transactions.delete_/transactions/{id}()
+      created_at: 1747241381721
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/transactions/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.transactions.update()
+      before: sdk.Transactions.patch_/transactions/{id}()
+      created_at: 1747241381721
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/transactions"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.transactions.create()
+      before: sdk.Transactions.post_/transactions()
+      created_at: 1747241381721
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/customers/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.customers.get()
+      before: sdk.Customers.get_/customers/{id}()
+      created_at: 1747241381721
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/pay/mpesa"]["post"]
+    update:
+      x-speakeasy-group: darajaPayment
+      x-speakeasy-name-override: mpesaPay
+    x-speakeasy-metadata:
+      after: sdk.darajaPayment.mpesaPay()
+      before: sdk.Daraja Payment.post_/pay/mpesa()
+      created_at: 1747241381721
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/customers"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.customers.create()
+      before: sdk.Customers.post_/customers()
+      created_at: 1747241381721
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/transactions"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.transactions.list()
+      before: sdk.Transactions.get_/transactions()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/products/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.products.delete()
+      before: sdk.Products.delete_/products/{id}()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/customers"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.customers.list()
+      before: sdk.Customers.get_/customers()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/transactions/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.transactions.get()
+      before: sdk.Transactions.get_/transactions/{id}()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/customers/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.customers.delete()
+      before: sdk.Customers.delete_/customers/{id}()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/products"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.products.create()
+      before: sdk.Products.post_/products()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/customers/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.customers.update()
+      before: sdk.Customers.patch_/customers/{id}()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/products/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.products.get()
+      before: sdk.Products.get_/products/{id}()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name
+  - target: $["paths"]["/products/{id}"]["patch"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.products.update()
+      before: sdk.Products.patch_/products/{id}()
+      created_at: 1747241381722
+      reviewed_at: 1747241388991
+      type: method-name

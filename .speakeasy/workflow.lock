@@ -1,0 +1,38 @@
+speakeasyVersion: 1.544.0
+sources:
+    MpesaFlow API:
+        sourceNamespace: mpesa-flow-api
+        sourceRevisionDigest: sha256:ef86264371f4327ef9981780e4a6dab525dc1dc852e6e205f7850b90adceecb1
+        sourceBlobDigest: sha256:be599179b5c7a399ef8a80df808b90a61487f2736d394fe107db0c0dc40a42f5
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    mpesa-flow:
+        source: MpesaFlow API
+        sourceNamespace: mpesa-flow-api
+        sourceRevisionDigest: sha256:ef86264371f4327ef9981780e4a6dab525dc1dc852e6e205f7850b90adceecb1
+        sourceBlobDigest: sha256:be599179b5c7a399ef8a80df808b90a61487f2736d394fe107db0c0dc40a42f5
+        codeSamplesNamespace: mpesa-flow-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:5bb7829f9d229c801915a2a6490aa3a6eea2b76ae5b78fda550d82533255853c
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        MpesaFlow API:
+            inputs:
+                - location: https://api.mpesaflow.com/v1/openapi
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            registry:
+                location: registry.speakeasyapi.dev/mpesaflow/sdks/mpesa-flow-api
+    targets:
+        mpesa-flow:
+            target: typescript
+            source: MpesaFlow API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/mpesaflow/sdks/mpesa-flow-api-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false

@@ -1,0 +1,534 @@
+lockVersion: 2.0.0
+id: 7d2dc8dc-ab35-46bb-a413-ef777a3e21a9
+management:
+  docChecksum: 45bdcf8e46d99b2a367e75f0c964cd79
+  docVersion: 1.0.0
+  speakeasyVersion: 1.544.0
+  generationVersion: 2.599.0
+  releaseVersion: 0.1.2
+  configChecksum: ff55a275d32ac493f68e7ebc555de2ff
+features:
+  typescript:
+    additionalDependencies: 0.1.0
+    constsAndDefaults: 0.1.11
+    core: 3.21.7
+    defaultEnabledRetries: 0.1.0
+    devContainers: 2.90.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.1.2
+    errorUnions: 0.1.1
+    globalSecurity: 2.82.13
+    globalSecurityCallbacks: 0.1.0
+    globalSecurityFlattening: 0.1.0
+    globalServerURLs: 2.82.5
+    groups: 2.81.2
+    mcpServer: 0.9.2
+    nameOverrides: 2.81.2
+    nullables: 0.1.1
+    responseFormat: 0.2.3
+    retries: 2.83.0
+    sdkHooks: 0.2.0
+    unions: 2.85.8
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .npmignore
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/security.md
+  - docs/models/errors/badrequesterrorresponse.md
+  - docs/models/errors/deleteproductsidunprocessableentityerror.md
+  - docs/models/errors/getproductsbadrequesterror.md
+  - docs/models/errors/getproductsnotfounderror.md
+  - docs/models/errors/getproductsunauthorizederror.md
+  - docs/models/errors/internalservererror.md
+  - docs/models/errors/internalservererrorerror.md
+  - docs/models/errors/issue.md
+  - docs/models/errors/notfounderrorresponse.md
+  - docs/models/errors/patchcustomersidunprocessableentity.md
+  - docs/models/errors/patchproductsidpath1.md
+  - docs/models/errors/patchproductsidunprocessableentity.md
+  - docs/models/errors/patchtransactionsidunprocessableentity.md
+  - docs/models/errors/responsebodyerror1.md
+  - docs/models/errors/responsebodyerror2.md
+  - docs/models/errors/responsebodyunprocessableentityerror.md
+  - docs/models/errors/unauthorizederrorresponse.md
+  - docs/models/errors/unprocessableentityerrorresponse.md
+  - docs/models/operations/deletecustomersidrequest.md
+  - docs/models/operations/deleteproductsidrequest.md
+  - docs/models/operations/deletetransactionsidrequest.md
+  - docs/models/operations/getcustomersdata.md
+  - docs/models/operations/getcustomersiddata.md
+  - docs/models/operations/getcustomersidmetadata.md
+  - docs/models/operations/getcustomersidrequest.md
+  - docs/models/operations/getcustomersidresponse.md
+  - docs/models/operations/getcustomersmetadata.md
+  - docs/models/operations/getcustomerspagination.md
+  - docs/models/operations/getcustomersrequest.md
+  - docs/models/operations/getcustomersresponse.md
+  - docs/models/operations/getcustomerssortfield.md
+  - docs/models/operations/getcustomerssortorder.md
+  - docs/models/operations/getproductsdata.md
+  - docs/models/operations/getproductsiddata.md
+  - docs/models/operations/getproductsidimages.md
+  - docs/models/operations/getproductsidmetadata.md
+  - docs/models/operations/getproductsidrequest.md
+  - docs/models/operations/getproductsidresponse.md
+  - docs/models/operations/getproductsimages.md
+  - docs/models/operations/getproductsmetadata.md
+  - docs/models/operations/getproductspagination.md
+  - docs/models/operations/getproductsrequest.md
+  - docs/models/operations/getproductsresponse.md
+  - docs/models/operations/getproductssortfield.md
+  - docs/models/operations/getproductssortorder.md
+  - docs/models/operations/gettransactionsdata.md
+  - docs/models/operations/gettransactionsiddata.md
+  - docs/models/operations/gettransactionsidmetadata.md
+  - docs/models/operations/gettransactionsidorigin.md
+  - docs/models/operations/gettransactionsidrequest.md
+  - docs/models/operations/gettransactionsidresponse.md
+  - docs/models/operations/gettransactionsidstatus.md
+  - docs/models/operations/gettransactionsidtype.md
+  - docs/models/operations/gettransactionsmetadata.md
+  - docs/models/operations/gettransactionsorigin.md
+  - docs/models/operations/gettransactionspagination.md
+  - docs/models/operations/gettransactionsrequest.md
+  - docs/models/operations/gettransactionsresponse.md
+  - docs/models/operations/gettransactionsstatus.md
+  - docs/models/operations/gettransactionstype.md
+  - docs/models/operations/patchcustomersiddata.md
+  - docs/models/operations/patchcustomersidmetadata.md
+  - docs/models/operations/patchcustomersidrequest.md
+  - docs/models/operations/patchcustomersidrequestbody.md
+  - docs/models/operations/patchcustomersidresponse.md
+  - docs/models/operations/patchproductsiddata.md
+  - docs/models/operations/patchproductsidimages.md
+  - docs/models/operations/patchproductsidmetadata.md
+  - docs/models/operations/patchproductsidrequest.md
+  - docs/models/operations/patchproductsidrequestbody.md
+  - docs/models/operations/patchproductsidresponse.md
+  - docs/models/operations/patchtransactionsidcallbackresult.md
+  - docs/models/operations/patchtransactionsiddata.md
+  - docs/models/operations/patchtransactionsidinitialrequest.md
+  - docs/models/operations/patchtransactionsidmetadatarequest.md
+  - docs/models/operations/patchtransactionsidmetadataresponse.md
+  - docs/models/operations/patchtransactionsidoriginrequest.md
+  - docs/models/operations/patchtransactionsidoriginresponse.md
+  - docs/models/operations/patchtransactionsidprovider.md
+  - docs/models/operations/patchtransactionsidrequest.md
+  - docs/models/operations/patchtransactionsidrequestbody.md
+  - docs/models/operations/patchtransactionsidresponse.md
+  - docs/models/operations/patchtransactionsidstatusrequest.md
+  - docs/models/operations/patchtransactionsidstatusresponse.md
+  - docs/models/operations/patchtransactionsidtyperequest.md
+  - docs/models/operations/patchtransactionsidtyperesponse.md
+  - docs/models/operations/postcustomersdata.md
+  - docs/models/operations/postcustomersmetadata.md
+  - docs/models/operations/postcustomersrequest.md
+  - docs/models/operations/postcustomersresponse.md
+  - docs/models/operations/postpaympesadata.md
+  - docs/models/operations/postpaympesarequest.md
+  - docs/models/operations/postpaympesaresponse.md
+  - docs/models/operations/postproductsdata.md
+  - docs/models/operations/postproductsimages.md
+  - docs/models/operations/postproductsmetadata.md
+  - docs/models/operations/postproductsrequest.md
+  - docs/models/operations/postproductsresponse.md
+  - docs/models/operations/posttransactionscallbackresult.md
+  - docs/models/operations/posttransactionsdata.md
+  - docs/models/operations/posttransactionsinitialrequest.md
+  - docs/models/operations/posttransactionsmetadatarequest.md
+  - docs/models/operations/posttransactionsmetadataresponse.md
+  - docs/models/operations/posttransactionsoriginrequest.md
+  - docs/models/operations/posttransactionsoriginresponse.md
+  - docs/models/operations/posttransactionsprovider.md
+  - docs/models/operations/posttransactionsrequest.md
+  - docs/models/operations/posttransactionsresponse.md
+  - docs/models/operations/posttransactionsstatusrequest.md
+  - docs/models/operations/posttransactionsstatusresponse.md
+  - docs/models/operations/posttransactionstyperequest.md
+  - docs/models/operations/posttransactionstyperesponse.md
+  - docs/sdks/customers/README.md
+  - docs/sdks/darajapayment/README.md
+  - docs/sdks/mpesaflow/README.md
+  - docs/sdks/products/README.md
+  - docs/sdks/transactions/README.md
+  - eslint.config.mjs
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/customersCreate.ts
+  - src/funcs/customersDelete.ts
+  - src/funcs/customersGet.ts
+  - src/funcs/customersList.ts
+  - src/funcs/customersUpdate.ts
+  - src/funcs/darajaPaymentMpesaPay.ts
+  - src/funcs/productsCreate.ts
+  - src/funcs/productsDelete.ts
+  - src/funcs/productsGet.ts
+  - src/funcs/productsList.ts
+  - src/funcs/productsUpdate.ts
+  - src/funcs/transactionsCreate.ts
+  - src/funcs/transactionsDelete.ts
+  - src/funcs/transactionsGet.ts
+  - src/funcs/transactionsList.ts
+  - src/funcs/transactionsUpdate.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/env.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/mcp-server/build.mts
+  - src/mcp-server/cli.ts
+  - src/mcp-server/cli/start/command.ts
+  - src/mcp-server/cli/start/impl.ts
+  - src/mcp-server/console-logger.ts
+  - src/mcp-server/extensions.ts
+  - src/mcp-server/mcp-server.ts
+  - src/mcp-server/prompts.ts
+  - src/mcp-server/resources.ts
+  - src/mcp-server/scopes.ts
+  - src/mcp-server/server.ts
+  - src/mcp-server/shared.ts
+  - src/mcp-server/tools.ts
+  - src/mcp-server/tools/customersCreate.ts
+  - src/mcp-server/tools/customersDelete.ts
+  - src/mcp-server/tools/customersGet.ts
+  - src/mcp-server/tools/customersList.ts
+  - src/mcp-server/tools/customersUpdate.ts
+  - src/mcp-server/tools/darajaPaymentMpesaPay.ts
+  - src/mcp-server/tools/productsCreate.ts
+  - src/mcp-server/tools/productsDelete.ts
+  - src/mcp-server/tools/productsGet.ts
+  - src/mcp-server/tools/productsList.ts
+  - src/mcp-server/tools/productsUpdate.ts
+  - src/mcp-server/tools/transactionsCreate.ts
+  - src/mcp-server/tools/transactionsDelete.ts
+  - src/mcp-server/tools/transactionsGet.ts
+  - src/mcp-server/tools/transactionsList.ts
+  - src/mcp-server/tools/transactionsUpdate.ts
+  - src/models/components/index.ts
+  - src/models/components/security.ts
+  - src/models/errors/apierror.ts
+  - src/models/errors/getproducts.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/deletecustomersid.ts
+  - src/models/operations/deleteproductsid.ts
+  - src/models/operations/deletetransactionsid.ts
+  - src/models/operations/getcustomers.ts
+  - src/models/operations/getcustomersid.ts
+  - src/models/operations/getproducts.ts
+  - src/models/operations/getproductsid.ts
+  - src/models/operations/gettransactions.ts
+  - src/models/operations/gettransactionsid.ts
+  - src/models/operations/index.ts
+  - src/models/operations/patchcustomersid.ts
+  - src/models/operations/patchproductsid.ts
+  - src/models/operations/patchtransactionsid.ts
+  - src/models/operations/postcustomers.ts
+  - src/models/operations/postpaympesa.ts
+  - src/models/operations/postproducts.ts
+  - src/models/operations/posttransactions.ts
+  - src/sdk/customers.ts
+  - src/sdk/darajapayment.ts
+  - src/sdk/index.ts
+  - src/sdk/products.ts
+  - src/sdk/sdk.ts
+  - src/sdk/transactions.ts
+  - src/types/async.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  get_/products:
+    speakeasy-default-get-/products:
+      parameters:
+        query:
+          page: 1
+          limit: 10
+          sort_field: "createdAt"
+          sort_order: "desc"
+      responses:
+        "200":
+          application/json: {"data": [], "pagination": {"totalCount": 3757.89, "maxPage": 3537.64, "currentPage": 960.02}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  post_/products:
+    speakeasy-default-post-/products:
+      requestBody:
+        application/json: {"name": "<value>", "active": true}
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"name": "<value>"}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  get_/products/{id}:
+    speakeasy-default-get-/products/{id}:
+      parameters:
+        path:
+          id: "prod_12345"
+      responses:
+        "200":
+          application/json: {"success": false, "data": {"id": "<id>", "active": true, "defaultPrice": "<value>", "name": "<value>", "description": "dreary after by till thyme massage galvanize disloyal", "images": {}, "metadata": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "livemode": true, "url": "https://political-deer.com/", "createdAt": "1715848225200", "updatedAt": "1747202343101"}}
+        "400":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  patch_/products/{id}:
+    speakeasy-default-patch-/products/{id}:
+      parameters:
+        path:
+          id: "prod_12345"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"id": "<id>", "active": false, "defaultPrice": "<value>", "name": "<value>", "description": "miscalculate phew indeed celebrate turret enormously absent syringe", "images": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "metadata": {"0": "<value>", "1": "<value>"}, "livemode": false, "url": "https://failing-impostor.name", "createdAt": "1742293472505", "updatedAt": "1747173458766"}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  delete_/products/{id}:
+    speakeasy-default-delete-/products/{id}:
+      parameters:
+        path:
+          id: "prod_12345"
+      responses:
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  get_/customers:
+    speakeasy-default-get-/customers:
+      parameters:
+        query:
+          page: 1
+          limit: 10
+          sort_field: "createdAt"
+          sort_order: "desc"
+      responses:
+        "200":
+          application/json: {"data": [{"id": "<id>", "name": "<value>", "description": "hm rejoin scary via rotten", "balance": "<value>", "livemode": false, "metadata": "<value>", "currency": "Libyan Dinar", "email": "Alessia_Johns28@gmail.com", "createdAt": "1735844530983", "updatedAt": "1747238814602", "lastActiveAt": "<value>"}, {"id": "<id>", "name": "<value>", "description": "tromp fooey quiet pish round postbox impeccable till closely", "balance": "<value>", "livemode": false, "metadata": {"0": "<value>", "1": "<value>"}, "currency": "East Caribbean Dollar", "email": "Olga.Corkery@hotmail.com", "createdAt": "1734946956595", "updatedAt": "1747162444465", "lastActiveAt": "<value>"}], "pagination": {"totalCount": 8404.09, "maxPage": 4425.17, "currentPage": 6597.12}}
+        "400":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  post_/customers:
+    speakeasy-default-post-/customers:
+      requestBody:
+        application/json: {"name": "<value>", "email": "Greyson_Nolan@hotmail.com"}
+      responses:
+        "200":
+          application/json: {"success": false, "data": {}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  get_/customers/{id}:
+    speakeasy-default-get-/customers/{id}:
+      parameters:
+        path:
+          id: "cus_12345"
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"id": "<id>", "name": "<value>", "description": "damp tenant mid but like oof flat before gadzooks questioningly", "balance": "<value>", "livemode": true, "metadata": {"0": "<value>"}, "currency": "CFA Franc BCEAO", "email": "Cordia_Roberts@yahoo.com", "createdAt": "1725743120877", "updatedAt": "1747234241732", "lastActiveAt": "<value>"}}
+        "400":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  patch_/customers/{id}:
+    speakeasy-default-patch-/customers/{id}:
+      parameters:
+        path:
+          id: "cus_12345"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"id": "<id>", "name": "<value>", "description": "ha shyly whoa refine obstruct onto", "balance": "<value>", "livemode": true, "metadata": 8603.99, "currency": "New Israeli Sheqel", "email": "Hillard.Hilpert@gmail.com", "createdAt": "1740888250367", "updatedAt": "1747227230656", "lastActiveAt": "<value>"}}
+        "400":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  delete_/customers/{id}:
+    speakeasy-default-delete-/customers/{id}:
+      parameters:
+        path:
+          id: "cus_12345"
+      responses:
+        "400":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  get_/transactions:
+    speakeasy-default-get-/transactions:
+      parameters:
+        query:
+          page: 1
+          limit: 10
+      responses:
+        "200":
+          application/json: {"data": [], "pagination": {"totalCount": 9822.92, "maxPage": 8875.82, "currentPage": 6789.95}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  post_/transactions:
+    speakeasy-default-post-/transactions:
+      requestBody:
+        application/json: {"customerId": "<id>", "amount": "753.13", "currency": "kes", "provider": "mpesa", "providerReference": "<value>", "status": "pending", "type": "payment", "origin": "api"}
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"amount": "276.94", "providerReference": "<value>"}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  get_/transactions/{id}:
+    speakeasy-default-get-/transactions/{id}:
+      parameters:
+        path:
+          id: "txn_12345"
+      responses:
+        "200":
+          application/json: {"success": false, "data": {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Bahraini Dinar", "fee": "<value>", "amount": "426.56", "provider": "<value>", "providerReference": "<value>", "description": "better gullible unless unknown well-documented after overheard", "status": "completed", "type": "donation", "metadata": {}, "origin": "api", "declineReason": "<value>", "createdAt": "1722736347434", "updatedAt": "1747189087161", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+  patch_/transactions/{id}:
+    speakeasy-default-patch-/transactions/{id}:
+      parameters:
+        path:
+          id: "txn_12345"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"success": false, "data": {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Norwegian Krone", "fee": "<value>", "amount": "653.77", "provider": "<value>", "providerReference": "<value>", "description": "internalize interestingly how notwithstanding whether rowdy shyly off", "status": "failed", "type": "payment", "metadata": "<value>", "origin": "api", "declineReason": "<value>", "createdAt": "1724193823119", "updatedAt": "1747230141763", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}}
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  delete_/transactions/{id}:
+    speakeasy-default-delete-/transactions/{id}:
+      parameters:
+        path:
+          id: "txn_12345"
+      responses:
+        "400":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "404":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+        "500":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+  post_/pay/mpesa:
+    speakeasy-default-post-/pay/mpesa:
+      requestBody:
+        application/json: {"phoneNumber": "478-851-4355 x0372", "amount": "835.52", "transactionDesc": "<value>"}
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"CheckoutRequestID": "<id>", "CustomerMessage": "<value>", "MerchantRequestID": "<id>", "ResponseCode": "<value>", "ResponseDescription": "<value>"}}
+        "400":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+examplesVersion: 1.0.1
+generatedTests: {}
