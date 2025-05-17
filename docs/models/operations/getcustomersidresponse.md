@@ -19,8 +19,8 @@ let value: GetCustomersIdResponse = {
     metadata: false,
     currency: "Uzbekistan Sum",
     email: "Jerod_Volkman@yahoo.com",
-    createdAt: "1744240089343",
-    updatedAt: "1747221019847",
+    createdAt: "1744443280769",
+    updatedAt: "1747424211272",
     lastActiveAt: "<value>",
   },
 };

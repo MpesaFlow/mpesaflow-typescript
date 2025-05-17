@@ -19,8 +19,8 @@ let value: GetProductsIdResponse = {
     metadata: 9462.6,
     livemode: false,
     url: "https://honorable-sunbeam.org/",
-    createdAt: "1728531692843",
-    updatedAt: "1747209835941",
+    createdAt: "1728734884688",
+    updatedAt: "1747413027786",
   },
 };
 ```

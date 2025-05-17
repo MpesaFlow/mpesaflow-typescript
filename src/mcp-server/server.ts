@@ -40,7 +40,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "MpesaFlow",
-    version: "0.1.2",
+    version: "0.1.3",
   });
 
   const client = new MpesaFlowCore({

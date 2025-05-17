@@ -16,8 +16,8 @@ let value: PatchCustomersIdData = {
   },
   currency: "Somoni",
   email: "Madaline_Renner@gmail.com",
-  createdAt: "1729251100680",
-  updatedAt: "1747216422959",
+  createdAt: "1729454293929",
+  updatedAt: "1747419616208",
   lastActiveAt: "<value>",
 };
 ```

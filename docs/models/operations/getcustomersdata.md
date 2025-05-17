@@ -15,8 +15,8 @@ let value: GetCustomersData = {
   metadata: false,
   currency: "Convertible Marks",
   email: "Griffin38@yahoo.com",
-  createdAt: "1726908059950",
-  updatedAt: "1747225679074",
+  createdAt: "1727111252955",
+  updatedAt: "1747428872079",
   lastActiveAt: "<value>",
 };
 ```
