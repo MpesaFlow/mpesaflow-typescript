@@ -21,8 +21,8 @@ let value: PatchCustomersIdResponse = {
     },
     currency: "Cedi",
     email: "Brenden.Simonis@yahoo.com",
-    createdAt: "1720661588370",
-    updatedAt: "1747236580939",
+    createdAt: "1720864780837",
+    updatedAt: "1747439773405",
     lastActiveAt: "<value>",
   },
 };

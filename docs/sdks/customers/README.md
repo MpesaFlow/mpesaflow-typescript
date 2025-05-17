@@ -103,7 +103,7 @@ const mpesaFlow = new MpesaFlow({
 async function run() {
   const result = await mpesaFlow.customers.create({
     name: "<value>",
-    email: "Greyson_Nolan@hotmail.com",
+    email: "Vernice3@gmail.com",
   });
 
   // Handle the result
@@ -130,7 +130,7 @@ const mpesaFlow = new MpesaFlowCore({
 async function run() {
   const res = await customersCreate(mpesaFlow, {
     name: "<value>",
-    email: "Greyson_Nolan@hotmail.com",
+    email: "Vernice3@gmail.com",
   });
 
   if (!res.ok) {

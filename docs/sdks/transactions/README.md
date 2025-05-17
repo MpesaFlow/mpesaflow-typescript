@@ -103,7 +103,7 @@ const mpesaFlow = new MpesaFlow({
 async function run() {
   const result = await mpesaFlow.transactions.create({
     customerId: "<id>",
-    amount: "753.13",
+    amount: "216.76",
     providerReference: "<value>",
   });
 
@@ -131,7 +131,7 @@ const mpesaFlow = new MpesaFlowCore({
 async function run() {
   const res = await transactionsCreate(mpesaFlow, {
     customerId: "<id>",
-    amount: "753.13",
+    amount: "216.76",
     providerReference: "<value>",
   });
 

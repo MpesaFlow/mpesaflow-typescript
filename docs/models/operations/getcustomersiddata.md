@@ -14,8 +14,8 @@ let value: GetCustomersIdData = {
   metadata: "<value>",
   currency: "Rand",
   email: "Camren.Bode3@gmail.com",
-  createdAt: "1725374956028",
-  updatedAt: "1747179213068",
+  createdAt: "1725578148108",
+  updatedAt: "1747382405147",
   lastActiveAt: "<value>",
 };
 ```

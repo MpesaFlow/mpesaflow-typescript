@@ -23,8 +23,8 @@ let value: PatchProductsIdResponse = {
     },
     livemode: false,
     url: "https://huge-cop-out.org/",
-    createdAt: "1743240561057",
-    updatedAt: "1747208780026",
+    createdAt: "1743443754565",
+    updatedAt: "1747411973533",
   },
 };
 ```

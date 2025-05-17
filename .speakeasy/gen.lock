@@ -3,15 +3,18 @@ id: 7d2dc8dc-ab35-46bb-a413-ef777a3e21a9
 management:
   docChecksum: 45bdcf8e46d99b2a367e75f0c964cd79
   docVersion: 1.0.0
-  speakeasyVersion: 1.544.0
-  generationVersion: 2.599.0
-  releaseVersion: 0.1.2
-  configChecksum: ff55a275d32ac493f68e7ebc555de2ff
+  speakeasyVersion: 1.546.1
+  generationVersion: 2.604.2
+  releaseVersion: 0.1.3
+  configChecksum: 9a758860b66a21d53b0085a1680359d7
+  repoURL: https://github.com/MpesaFlow/mpesaflow-typescript.git
+  installationURL: https://github.com/MpesaFlow/mpesaflow-typescript
+  published: true
 features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.7
+    core: 3.21.8
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -277,7 +280,7 @@ examples:
           sort_order: "desc"
       responses:
         "200":
-          application/json: {"data": [], "pagination": {"totalCount": 3757.89, "maxPage": 3537.64, "currentPage": 960.02}}
+          application/json: {"data": [{"id": "<id>", "active": false, "defaultPrice": "<value>", "name": "<value>", "description": "quizzically blah cinema outfit sheepishly aged inspection huzzah unless", "images": {"key": "<value>"}, "metadata": ["<value 1>"], "livemode": true, "url": "https://each-subsidy.net", "createdAt": "1746996812212", "updatedAt": "1747407360679"}], "pagination": {"totalCount": 9861.82, "maxPage": 4511.95, "currentPage": 2339.04}}
         "400":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "401":
@@ -292,11 +295,11 @@ examples:
         application/json: {"name": "<value>", "active": true}
       responses:
         "200":
-          application/json: {"success": true, "data": {"name": "<value>"}}
+          application/json: {"success": false, "data": {"name": "<value>"}}
         "400":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "500":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
   get_/products/{id}:
@@ -306,15 +309,15 @@ examples:
           id: "prod_12345"
       responses:
         "200":
-          application/json: {"success": false, "data": {"id": "<id>", "active": true, "defaultPrice": "<value>", "name": "<value>", "description": "dreary after by till thyme massage galvanize disloyal", "images": {}, "metadata": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "livemode": true, "url": "https://political-deer.com/", "createdAt": "1715848225200", "updatedAt": "1747202343101"}}
+          application/json: {"success": true, "data": {"id": "<id>", "active": false, "defaultPrice": "<value>", "name": "<value>", "description": "denitrify besides ack legging hexagon", "images": "<value>", "metadata": {"key": "<value>", "key1": "<value>"}, "livemode": true, "url": "https://foolhardy-whack.com", "createdAt": "1734631795130", "updatedAt": "1747420050224"}}
         "400":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
-        "401":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "404":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "500":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
   patch_/products/{id}:
     speakeasy-default-patch-/products/{id}:
       parameters:
@@ -324,17 +327,17 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"success": true, "data": {"id": "<id>", "active": false, "defaultPrice": "<value>", "name": "<value>", "description": "miscalculate phew indeed celebrate turret enormously absent syringe", "images": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "metadata": {"0": "<value>", "1": "<value>"}, "livemode": false, "url": "https://failing-impostor.name", "createdAt": "1742293472505", "updatedAt": "1747173458766"}}
+          application/json: {"success": true, "data": {"id": "<id>", "active": false, "defaultPrice": "<value>", "name": "<value>", "description": "confound tomography quizzically stake oh along since", "images": {"key": "<value>", "key1": "<value>"}, "metadata": true, "livemode": false, "url": "https://fond-transom.info/", "createdAt": "1721506513697", "updatedAt": "1747389659831"}}
         "400":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "404":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "422":
-          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+          application/json: {"success": false, "error": {"issues": [{"code": "<value>", "path": []}, {"code": "<value>", "path": []}, {"code": "<value>", "path": []}], "name": "<value>"}}
         "500":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
   delete_/products/{id}:
     speakeasy-default-delete-/products/{id}:
       parameters:
@@ -342,7 +345,7 @@ examples:
           id: "prod_12345"
       responses:
         "400":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "404":
@@ -350,7 +353,7 @@ examples:
         "422":
           application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
         "500":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
   get_/customers:
     speakeasy-default-get-/customers:
       parameters:
@@ -361,28 +364,28 @@ examples:
           sort_order: "desc"
       responses:
         "200":
-          application/json: {"data": [{"id": "<id>", "name": "<value>", "description": "hm rejoin scary via rotten", "balance": "<value>", "livemode": false, "metadata": "<value>", "currency": "Libyan Dinar", "email": "Alessia_Johns28@gmail.com", "createdAt": "1735844530983", "updatedAt": "1747238814602", "lastActiveAt": "<value>"}, {"id": "<id>", "name": "<value>", "description": "tromp fooey quiet pish round postbox impeccable till closely", "balance": "<value>", "livemode": false, "metadata": {"0": "<value>", "1": "<value>"}, "currency": "East Caribbean Dollar", "email": "Olga.Corkery@hotmail.com", "createdAt": "1734946956595", "updatedAt": "1747162444465", "lastActiveAt": "<value>"}], "pagination": {"totalCount": 8404.09, "maxPage": 4425.17, "currentPage": 6597.12}}
+          application/json: {"data": [], "pagination": {"totalCount": 8097.8, "maxPage": 9655.54, "currentPage": 3275.11}}
         "400":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "404":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "500":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
   post_/customers:
     speakeasy-default-post-/customers:
       requestBody:
-        application/json: {"name": "<value>", "email": "Greyson_Nolan@hotmail.com"}
+        application/json: {"name": "<value>", "email": "Vernice3@gmail.com"}
       responses:
         "200":
           application/json: {"success": false, "data": {}}
         "400":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "500":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
   get_/customers/{id}:
     speakeasy-default-get-/customers/{id}:
       parameters:
@@ -390,13 +393,13 @@ examples:
           id: "cus_12345"
       responses:
         "200":
-          application/json: {"success": true, "data": {"id": "<id>", "name": "<value>", "description": "damp tenant mid but like oof flat before gadzooks questioningly", "balance": "<value>", "livemode": true, "metadata": {"0": "<value>"}, "currency": "CFA Franc BCEAO", "email": "Cordia_Roberts@yahoo.com", "createdAt": "1725743120877", "updatedAt": "1747234241732", "lastActiveAt": "<value>"}}
+          application/json: {"success": true, "data": {"id": "<id>", "name": "<value>", "description": "zowie violently yahoo favorite", "balance": "<value>", "livemode": false, "metadata": "<value>", "currency": "Congolese Franc", "email": "Dereck_Hyatt34@yahoo.com", "createdAt": "1746987394793", "updatedAt": "1747404836917", "lastActiveAt": "<value>"}}
         "400":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "404":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "500":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
   patch_/customers/{id}:
@@ -408,17 +411,17 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"success": true, "data": {"id": "<id>", "name": "<value>", "description": "ha shyly whoa refine obstruct onto", "balance": "<value>", "livemode": true, "metadata": 8603.99, "currency": "New Israeli Sheqel", "email": "Hillard.Hilpert@gmail.com", "createdAt": "1740888250367", "updatedAt": "1747227230656", "lastActiveAt": "<value>"}}
+          application/json: {"success": true, "data": {"id": "<id>", "name": "<value>", "description": "tremendously solidly corporation nor like pish economise christen ripe", "balance": "<value>", "livemode": false, "metadata": 9576.64, "currency": "Zloty", "email": "Marley.Lockman12@hotmail.com", "createdAt": "1724286588431", "updatedAt": "1747382069878", "lastActiveAt": "<value>"}}
         "400":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "401":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "404":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "422":
-          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
+          application/json: {"success": false, "error": {"issues": [], "name": "<value>"}}
         "500":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
   delete_/customers/{id}:
     speakeasy-default-delete-/customers/{id}:
       parameters:
@@ -430,7 +433,7 @@ examples:
         "401":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "404":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "422":
           application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
         "500":
@@ -443,22 +446,22 @@ examples:
           limit: 10
       responses:
         "200":
-          application/json: {"data": [], "pagination": {"totalCount": 9822.92, "maxPage": 8875.82, "currentPage": 6789.95}}
+          application/json: {"data": [{"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Brunei Dollar", "fee": "<value>", "amount": "209.99", "provider": "<value>", "providerReference": "<value>", "description": "ack fortunately brand after uh-huh tepid aside", "status": "failed", "type": "donation", "metadata": {}, "origin": "web", "declineReason": "<value>", "createdAt": "1737583676946", "updatedAt": "1747417833243", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}, {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Brunei Dollar", "fee": "<value>", "amount": "209.99", "provider": "<value>", "providerReference": "<value>", "description": "ack fortunately brand after uh-huh tepid aside", "status": "failed", "type": "donation", "metadata": {}, "origin": "web", "declineReason": "<value>", "createdAt": "1737583676946", "updatedAt": "1747417833243", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}, {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Brunei Dollar", "fee": "<value>", "amount": "209.99", "provider": "<value>", "providerReference": "<value>", "description": "ack fortunately brand after uh-huh tepid aside", "status": "failed", "type": "donation", "metadata": {}, "origin": "web", "declineReason": "<value>", "createdAt": "1737583676946", "updatedAt": "1747417833243", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}], "pagination": {"totalCount": 5573.54, "maxPage": 3974.89, "currentPage": 1071.54}}
         "400":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "404":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "500":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
   post_/transactions:
     speakeasy-default-post-/transactions:
       requestBody:
-        application/json: {"customerId": "<id>", "amount": "753.13", "currency": "kes", "provider": "mpesa", "providerReference": "<value>", "status": "pending", "type": "payment", "origin": "api"}
+        application/json: {"customerId": "<id>", "amount": "216.76", "currency": "kes", "provider": "mpesa", "providerReference": "<value>", "status": "pending", "type": "payment", "origin": "api"}
       responses:
         "200":
-          application/json: {"success": true, "data": {"amount": "276.94", "providerReference": "<value>"}}
+          application/json: {"success": true, "data": {"amount": "817.10", "providerReference": "<value>"}}
         "400":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "401":
@@ -472,11 +475,11 @@ examples:
           id: "txn_12345"
       responses:
         "200":
-          application/json: {"success": false, "data": {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Bahraini Dinar", "fee": "<value>", "amount": "426.56", "provider": "<value>", "providerReference": "<value>", "description": "better gullible unless unknown well-documented after overheard", "status": "completed", "type": "donation", "metadata": {}, "origin": "api", "declineReason": "<value>", "createdAt": "1722736347434", "updatedAt": "1747189087161", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}}
+          application/json: {"success": true, "data": {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Czech Koruna", "fee": "<value>", "amount": "46.99", "provider": "<value>", "providerReference": "<value>", "description": "flashy firsthand gah rightfully which", "status": "pending", "type": "donation", "metadata": "<value>", "origin": "web", "declineReason": "<value>", "createdAt": "1725088365662", "updatedAt": "1747407984362", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}}
         "400":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "404":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "500":
@@ -490,17 +493,17 @@ examples:
         application/json: {}
       responses:
         "200":
-          application/json: {"success": false, "data": {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Norwegian Krone", "fee": "<value>", "amount": "653.77", "provider": "<value>", "providerReference": "<value>", "description": "internalize interestingly how notwithstanding whether rowdy shyly off", "status": "failed", "type": "payment", "metadata": "<value>", "origin": "api", "declineReason": "<value>", "createdAt": "1724193823119", "updatedAt": "1747230141763", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}}
+          application/json: {"success": false, "data": {"id": "<id>", "customerId": "<id>", "object": "<value>", "currency": "Falkland Islands Pound", "fee": "<value>", "amount": "853.08", "provider": "<value>", "providerReference": "<value>", "description": "while anenst extricate joshingly jaggedly overproduce versus", "status": "completed", "type": "donation", "metadata": 998.54, "origin": "web", "declineReason": "<value>", "createdAt": "1737900021954", "updatedAt": "1747380274163", "refundedAt": "<value>", "paidAt": "<value>", "failedAt": "<value>", "disputedAt": "<value>"}}
         "400":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "404":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
-        "422":
-          application/json: {"success": false, "error": {"issues": [{"code": "invalid_literal", "path": ["success"], "message": "Invalid literal value, expected false"}, {"code": "invalid_type", "path": ["error"], "message": "Required"}], "name": "ZodError"}}
-        "500":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "422":
+          application/json: {"success": false, "error": {"issues": [{"code": "<value>", "path": [4302.59, 3826.86, 6516.86]}, {"code": "<value>", "path": [4302.59, 3826.86, 6516.86]}, {"code": "<value>", "path": [4302.59, 3826.86, 6516.86]}], "name": "<value>"}}
+        "500":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
   delete_/transactions/{id}:
     speakeasy-default-delete-/transactions/{id}:
       parameters:
@@ -508,9 +511,9 @@ examples:
           id: "txn_12345"
       responses:
         "400":
-          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
-        "401":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+        "401":
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "404":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "422":
@@ -520,15 +523,15 @@ examples:
   post_/pay/mpesa:
     speakeasy-default-post-/pay/mpesa:
       requestBody:
-        application/json: {"phoneNumber": "478-851-4355 x0372", "amount": "835.52", "transactionDesc": "<value>"}
+        application/json: {"phoneNumber": "566.268.9042 x96918", "amount": "290.72", "transactionDesc": "<value>"}
       responses:
         "200":
           application/json: {"success": true, "data": {"CheckoutRequestID": "<id>", "CustomerMessage": "<value>", "MerchantRequestID": "<id>", "ResponseCode": "<value>", "ResponseDescription": "<value>"}}
         "400":
           application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
         "401":
-          application/json: {"success": true, "error": {"code": "<value>", "message": "<value>"}}
+          application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
         "500":
           application/json: {"success": false, "error": {"code": "<value>", "message": "<value>"}}
-examplesVersion: 1.0.1
+examplesVersion: 1.0.2
 generatedTests: {}

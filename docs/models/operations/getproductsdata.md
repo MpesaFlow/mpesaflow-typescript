@@ -17,8 +17,8 @@ let value: GetProductsData = {
   metadata: 6012.5,
   livemode: false,
   url: "https://dual-premier.com/",
-  createdAt: "1747001852479",
-  updatedAt: "1747156509829",
+  createdAt: "1747205045838",
+  updatedAt: "1747359703187",
 };
 ```
 

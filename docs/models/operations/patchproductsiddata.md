@@ -15,8 +15,8 @@ let value: PatchProductsIdData = {
   metadata: false,
   livemode: false,
   url: "https://doting-thread.info/",
-  createdAt: "1733656785724",
-  updatedAt: "1747162715320",
+  createdAt: "1733859976094",
+  updatedAt: "1747365905690",
 };
 ```
 

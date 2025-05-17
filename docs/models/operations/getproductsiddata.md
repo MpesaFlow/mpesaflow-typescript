@@ -17,8 +17,8 @@ let value: GetProductsIdData = {
   },
   livemode: false,
   url: "https://acidic-colonialism.info/",
-  createdAt: "1738648714321",
-  updatedAt: "1747237625374",
+  createdAt: "1738851907260",
+  updatedAt: "1747440818313",
 };
 ```
 

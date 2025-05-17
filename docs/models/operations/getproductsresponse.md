@@ -20,8 +20,8 @@ let value: GetProductsResponse = {
       metadata: 2345.63,
       livemode: false,
       url: "https://vivacious-stump.info/",
-      createdAt: "1724959087339",
-      updatedAt: "1747191791677",
+      createdAt: "1725162278765",
+      updatedAt: "1747394983103",
     },
   ],
   pagination: {

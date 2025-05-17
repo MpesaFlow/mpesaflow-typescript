@@ -22,8 +22,8 @@ const mpesaFlow = new MpesaFlow({
 
 async function run() {
   const result = await mpesaFlow.darajaPayment.mpesaPay({
-    phoneNumber: "478-851-4355 x0372",
-    amount: "835.52",
+    phoneNumber: "566.268.9042 x96918",
+    amount: "290.72",
     transactionDesc: "<value>",
   });
 
@@ -50,8 +50,8 @@ const mpesaFlow = new MpesaFlowCore({
 
 async function run() {
   const res = await darajaPaymentMpesaPay(mpesaFlow, {
-    phoneNumber: "478-851-4355 x0372",
-    amount: "835.52",
+    phoneNumber: "566.268.9042 x96918",
+    amount: "290.72",
     transactionDesc: "<value>",
   });
 
