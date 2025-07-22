@@ -1,0 +1,22 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    MpesaFlow API:
+        inputs:
+            - location: https://api.mpesaflow.dev/openapi
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/mpesaflow/sdks/mpesa-flow-api
+targets:
+    mpesa-flow:
+        target: typescript
+        source: MpesaFlow API
+        publish:
+            npm:
+                token: $npm_token
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/mpesaflow/sdks/mpesa-flow-api-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false
