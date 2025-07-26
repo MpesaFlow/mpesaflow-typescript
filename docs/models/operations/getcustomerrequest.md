@@ -14,4 +14,4 @@ let value: GetCustomerRequest = {
 
 | Field                | Type                 | Required             | Description          | Example              |
 | -------------------- | -------------------- | -------------------- | -------------------- | -------------------- |
-| `id`                 | *string*             | :heavy_check_mark:   | N/A                  | cus_GqfKXLmg61LURZhB |
+| `id`                 | *string*             | :heavy_check_mark:   | The customer id      | cus_GqfKXLmg61LURZhB |

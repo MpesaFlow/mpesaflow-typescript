@@ -1,13 +1,11 @@
-# ListCustomersResponseBody
-
-List of all customers
+# PaginatedData
 
 ## Example Usage
 
 ```typescript
-import { ListCustomersResponseBody } from "@mpesaflow/sdk/models/operations";
+import { PaginatedData } from "@mpesaflow/sdk/models";
 
-let value: ListCustomersResponseBody = {
+let value: PaginatedData = {
   data: [
     {
       id: "cus_GqfKXLmg61LURZhB",
@@ -26,6 +24,6 @@ let value: ListCustomersResponseBody = {
 
 | Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `data`                                                                   | [models.CustomerResponse](../../models/customerresponse.md)[]            | :heavy_check_mark:                                                       | N/A                                                                      |                                                                          |
+| `data`                                                                   | [models.CustomerResponse](../models/customerresponse.md)[]               | :heavy_check_mark:                                                       | N/A                                                                      |                                                                          |
 | `nextCursor`                                                             | *string*                                                                 | :heavy_check_mark:                                                       | Cursor for pagination, representing the last item from the previous page | eyJpZCI6IjEyMyJ9                                                         |
 | `limit`                                                                  | *number*                                                                 | :heavy_minus_sign:                                                       | The number of data to return (1-100)                                     | 10                                                                       |

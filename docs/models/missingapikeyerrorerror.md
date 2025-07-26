@@ -6,8 +6,8 @@
 import { MissingApiKeyErrorError } from "@mpesaflow/sdk/models";
 
 let value: MissingApiKeyErrorError = {
-  code: "missing_api_key",
   status: 401,
+  code: "missing_api_key",
   message: "Missing API key in the authorization header.",
 };
 ```
@@ -16,6 +16,6 @@ let value: MissingApiKeyErrorError = {
 
 | Field                                        | Type                                         | Required                                     | Description                                  | Example                                      |
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| `code`                                       | *string*                                     | :heavy_check_mark:                           | Machine-readable error name                  | missing_api_key                              |
 | `status`                                     | *number*                                     | :heavy_check_mark:                           | HTTP status code of the error                | 401                                          |
+| `code`                                       | *string*                                     | :heavy_check_mark:                           | Machine-readable error name                  | missing_api_key                              |
 | `message`                                    | *string*                                     | :heavy_check_mark:                           | Human-readable error message                 | Missing API key in the authorization header. |
