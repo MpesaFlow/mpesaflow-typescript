@@ -14,4 +14,4 @@ let value: GetTransactionRequest = {
 
 | Field                 | Type                  | Required              | Description           | Example               |
 | --------------------- | --------------------- | --------------------- | --------------------- | --------------------- |
-| `id`                  | *string*              | :heavy_check_mark:    | N/A                   | trxn_YGZBY32PBBavYbhL |
+| `id`                  | *string*              | :heavy_check_mark:    | The transaction id    | trxn_YGZBY32PBBavYbhL |

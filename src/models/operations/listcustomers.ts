@@ -30,31 +30,34 @@ export type ListCustomersSortUnion =
   | ListCustomersSortEnum2;
 
 export type ListCustomersRequest = {
+  /**
+   * Search for a customer by name or phone number
+   */
   q?: string | undefined;
-  cursor?: string | undefined;
-  limit?: number | undefined;
-  start?: string | null | undefined;
-  end?: string | null | undefined;
-  sort?: Array<ListCustomersSortEnum1 | ListCustomersSortEnum2> | undefined;
-};
-
-/**
- * List of all customers
- */
-export type ListCustomersResponseBody = {
-  data: Array<models.CustomerResponse>;
   /**
    * Cursor for pagination, representing the last item from the previous page
    */
-  nextCursor: string | null;
+  cursor?: string | undefined;
   /**
-   * The number of data to return (1-100)
+   * The number of customers to return (1-100)
    */
   limit?: number | undefined;
+  /**
+   * Start date (inclusive) for filtering customers in ISO 8601 format
+   */
+  start?: string | null | undefined;
+  /**
+   * End date (inclusive) for filtering customers in ISO 8601 format
+   */
+  end?: string | null | undefined;
+  /**
+   * Sorting order as a tuple: [field, direction]. Available fields: id, name, phoneNumber, createdAt, lastActiveAt
+   */
+  sort?: Array<ListCustomersSortEnum1 | ListCustomersSortEnum2> | undefined;
 };
 
 export type ListCustomersResponse = {
-  result: ListCustomersResponseBody;
+  result: models.PaginatedData;
 };
 
 /** @internal */
@@ -233,80 +236,12 @@ export function listCustomersRequestFromJSON(
 }
 
 /** @internal */
-export const ListCustomersResponseBody$inboundSchema: z.ZodType<
-  ListCustomersResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  data: z.array(models.CustomerResponse$inboundSchema),
-  next_cursor: z.nullable(z.string()),
-  limit: z.number().default(10),
-}).transform((v) => {
-  return remap$(v, {
-    "next_cursor": "nextCursor",
-  });
-});
-
-/** @internal */
-export type ListCustomersResponseBody$Outbound = {
-  data: Array<models.CustomerResponse$Outbound>;
-  next_cursor: string | null;
-  limit: number;
-};
-
-/** @internal */
-export const ListCustomersResponseBody$outboundSchema: z.ZodType<
-  ListCustomersResponseBody$Outbound,
-  z.ZodTypeDef,
-  ListCustomersResponseBody
-> = z.object({
-  data: z.array(models.CustomerResponse$outboundSchema),
-  nextCursor: z.nullable(z.string()),
-  limit: z.number().default(10),
-}).transform((v) => {
-  return remap$(v, {
-    nextCursor: "next_cursor",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCustomersResponseBody$ {
-  /** @deprecated use `ListCustomersResponseBody$inboundSchema` instead. */
-  export const inboundSchema = ListCustomersResponseBody$inboundSchema;
-  /** @deprecated use `ListCustomersResponseBody$outboundSchema` instead. */
-  export const outboundSchema = ListCustomersResponseBody$outboundSchema;
-  /** @deprecated use `ListCustomersResponseBody$Outbound` instead. */
-  export type Outbound = ListCustomersResponseBody$Outbound;
-}
-
-export function listCustomersResponseBodyToJSON(
-  listCustomersResponseBody: ListCustomersResponseBody,
-): string {
-  return JSON.stringify(
-    ListCustomersResponseBody$outboundSchema.parse(listCustomersResponseBody),
-  );
-}
-
-export function listCustomersResponseBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCustomersResponseBody, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCustomersResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCustomersResponseBody' from JSON`,
-  );
-}
-
-/** @internal */
 export const ListCustomersResponse$inboundSchema: z.ZodType<
   ListCustomersResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Result: z.lazy(() => ListCustomersResponseBody$inboundSchema),
+  Result: models.PaginatedData$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Result": "result",
@@ -315,7 +250,7 @@ export const ListCustomersResponse$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListCustomersResponse$Outbound = {
-  Result: ListCustomersResponseBody$Outbound;
+  Result: models.PaginatedData$Outbound;
 };
 
 /** @internal */
@@ -324,7 +259,7 @@ export const ListCustomersResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListCustomersResponse
 > = z.object({
-  result: z.lazy(() => ListCustomersResponseBody$outboundSchema),
+  result: models.PaginatedData$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     result: "Result",

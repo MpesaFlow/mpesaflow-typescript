@@ -1,20 +1,21 @@
-speakeasyVersion: 1.584.0
+speakeasyVersion: 1.590.0
 sources:
     MpesaFlow API:
         sourceNamespace: mpesa-flow-api
-        sourceRevisionDigest: sha256:d9fdb173371e1ac9c7fb5d17783387bcf8470aa1c81189490e8db027f52c8105
-        sourceBlobDigest: sha256:a7579200dce80b109f39aa52a370886f4642eb38a9e9c78366070b5616d5ca2c
+        sourceRevisionDigest: sha256:590de9b3da1872692edfd5fff7624354ea32ff0849ae61a430f8d94e0deea77c
+        sourceBlobDigest: sha256:5106fce4d56c9e0f68dbed8f5d0dc8c8b2d888c15313d4d28d7afc6d59a1fdc6
         tags:
             - latest
+            - speakeasy-sdk-regen-1753321469
             - 1.0.0
 targets:
     mpesa-flow:
         source: MpesaFlow API
         sourceNamespace: mpesa-flow-api
-        sourceRevisionDigest: sha256:d9fdb173371e1ac9c7fb5d17783387bcf8470aa1c81189490e8db027f52c8105
-        sourceBlobDigest: sha256:a7579200dce80b109f39aa52a370886f4642eb38a9e9c78366070b5616d5ca2c
+        sourceRevisionDigest: sha256:590de9b3da1872692edfd5fff7624354ea32ff0849ae61a430f8d94e0deea77c
+        sourceBlobDigest: sha256:5106fce4d56c9e0f68dbed8f5d0dc8c8b2d888c15313d4d28d7afc6d59a1fdc6
         codeSamplesNamespace: mpesa-flow-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:0dd514a3291eac75ca597a5ca0b9f39e55af79f5e985e17fdd50c46d6683e879
+        codeSamplesRevisionDigest: sha256:7550f170cf0fd6b86ecdc4c7a9ee682e015c2fec44629bf5bb2d8d42277f8881
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -29,6 +30,9 @@ workflow:
         mpesa-flow:
             target: typescript
             source: MpesaFlow API
+            publish:
+                npm:
+                    token: $npm_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/mpesaflow/sdks/mpesa-flow-api-typescript-code-samples

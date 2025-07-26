@@ -1,17 +1,20 @@
 lockVersion: 2.0.0
 id: 04bab484-dda9-4d66-b0e0-ba350850746f
 management:
-  docChecksum: ee2a7875431938357606044aa9ddd19b
+  docChecksum: 6f78a1e63ca5334261541a9c6b02d72d
   docVersion: 1.0.0
-  speakeasyVersion: 1.584.0
-  generationVersion: 2.660.0
-  releaseVersion: 0.0.1
-  configChecksum: 6b56bd5811e49aeabeb8c458cb57d13a
+  speakeasyVersion: 1.590.0
+  generationVersion: 2.666.0
+  releaseVersion: 0.0.2
+  configChecksum: 871f736724d846c22cbf77da6dbec5b4
+  repoURL: https://github.com/MpesaFlow/mpesaflow-typescript.git
+  installationURL: https://github.com/MpesaFlow/mpesaflow-typescript
+  published: true
 features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.14
+    core: 3.21.15
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -59,7 +62,6 @@ generatedFiles:
   - docs/models/operations/gettransactionrequest.md
   - docs/models/operations/listcustomersrequest.md
   - docs/models/operations/listcustomersresponse.md
-  - docs/models/operations/listcustomersresponsebody.md
   - docs/models/operations/listcustomerssortenum1.md
   - docs/models/operations/listcustomerssortenum2.md
   - docs/models/operations/listcustomerssortunion.md
@@ -70,6 +72,7 @@ generatedFiles:
   - docs/models/operations/listtransactionssortenum2.md
   - docs/models/operations/listtransactionssortunion.md
   - docs/models/operations/listtransactionsstatus.md
+  - docs/models/paginateddata.md
   - docs/models/security.md
   - docs/models/status.md
   - docs/models/toomanyrequestserrorerror.md
@@ -139,6 +142,7 @@ generatedFiles:
   - src/models/operations/index.ts
   - src/models/operations/listcustomers.ts
   - src/models/operations/listtransactions.ts
+  - src/models/paginateddata.ts
   - src/models/security.ts
   - src/models/toomanyrequestserror.ts
   - src/models/transactionresponse.ts
@@ -174,15 +178,15 @@ examples:
         "200":
           application/json: {"data": [], "next_cursor": "eyJpZCI6IjEyMyJ9", "limit": 10}
         "401":
-          application/json: {"error": {"code": "missing_api_key", "status": 401, "message": "Missing API key in the authorization header."}}
+          application/json: {"error": {"status": 401, "code": "missing_api_key", "message": "Missing API key in the authorization header."}}
         "403":
-          application/json: {"error": {"code": "invalid_api_key", "status": 403, "message": "API key is invalid."}}
+          application/json: {"error": {"status": 403, "code": "invalid_api_key", "message": "API key is invalid."}}
         "422":
-          application/json: {"error": {"code": "validation_error", "status": 422, "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format"}, {"field": "name", "message": "Name is required"}]}}
+          application/json: {"error": {"status": 422, "code": "validation_error", "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format", "expected": "valid_email"}, {"field": "age", "message": "Expected number, received string", "expected": "number"}]}}
         "429":
-          application/json: {"error": {"code": "too_many_requests", "status": 429, "message": "Too many requests, please try again later."}}
+          application/json: {"error": {"status": 429, "code": "too_many_requests", "message": "Too many requests, please try again later."}}
         "500":
-          application/json: {"error": {"code": "internal_server_error", "status": 500, "message": "An unexpected error occurred."}}
+          application/json: {"error": {"status": 500, "code": "internal_server_error", "message": "An unexpected error occurred."}}
   getCustomer:
     speakeasy-default-get-customer:
       parameters:
@@ -192,17 +196,17 @@ examples:
         "200":
           application/json: {"id": "cus_GqfKXLmg61LURZhB", "object": "customer", "environment": "development", "name": "John Doe", "phoneNumber": "254712345678", "createdAt": "2021-01-01T00:00:00Z", "lastActiveAt": "2021-01-01T00:00:00Z"}
         "401":
-          application/json: {"error": {"code": "missing_api_key", "status": 401, "message": "Missing API key in the authorization header."}}
+          application/json: {"error": {"status": 401, "code": "missing_api_key", "message": "Missing API key in the authorization header."}}
         "403":
-          application/json: {"error": {"code": "invalid_api_key", "status": 403, "message": "API key is invalid."}}
+          application/json: {"error": {"status": 403, "code": "invalid_api_key", "message": "API key is invalid."}}
         "404":
-          application/json: {"error": {"code": "not_found", "status": 404, "message": "The requested endpoint does not exist."}}
+          application/json: {"error": {"status": 404, "code": "not_found", "message": "The requested endpoint does not exist."}}
         "422":
-          application/json: {"error": {"code": "validation_error", "status": 422, "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format"}, {"field": "name", "message": "Name is required"}]}}
+          application/json: {"error": {"status": 422, "code": "validation_error", "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format", "expected": "valid_email"}, {"field": "age", "message": "Expected number, received string", "expected": "number"}]}}
         "429":
-          application/json: {"error": {"code": "too_many_requests", "status": 429, "message": "Too many requests, please try again later."}}
+          application/json: {"error": {"status": 429, "code": "too_many_requests", "message": "Too many requests, please try again later."}}
         "500":
-          application/json: {"error": {"code": "internal_server_error", "status": 500, "message": "An unexpected error occurred."}}
+          application/json: {"error": {"status": 500, "code": "internal_server_error", "message": "An unexpected error occurred."}}
   express:
     speakeasy-default-express:
       requestBody:
@@ -211,15 +215,15 @@ examples:
         "200":
           application/json: {"status": "completed", "message": "Transaction completed successfully", "amount": "100.00", "phoneNumber": "254712345678", "transactionId": "trxn_YGZBY32PBBavYbhL", "type": "payment", "timestamp": "2025-07-13T18:10:00Z"}
         "401":
-          application/json: {"error": {"code": "missing_api_key", "status": 401, "message": "Missing API key in the authorization header."}}
+          application/json: {"error": {"status": 401, "code": "missing_api_key", "message": "Missing API key in the authorization header."}}
         "403":
-          application/json: {"error": {"code": "invalid_api_key", "status": 403, "message": "API key is invalid."}}
+          application/json: {"error": {"status": 403, "code": "invalid_api_key", "message": "API key is invalid."}}
         "422":
-          application/json: {"error": {"code": "validation_error", "status": 422, "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format"}, {"field": "name", "message": "Name is required"}]}}
+          application/json: {"error": {"status": 422, "code": "validation_error", "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format", "expected": "valid_email"}, {"field": "age", "message": "Expected number, received string", "expected": "number"}]}}
         "429":
-          application/json: {"error": {"code": "too_many_requests", "status": 429, "message": "Too many requests, please try again later."}}
+          application/json: {"error": {"status": 429, "code": "too_many_requests", "message": "Too many requests, please try again later."}}
         "500":
-          application/json: {"error": {"code": "internal_server_error", "status": 500, "message": "An unexpected error occurred."}}
+          application/json: {"error": {"status": 500, "code": "internal_server_error", "message": "An unexpected error occurred."}}
   listTransactions:
     speakeasy-default-list-transactions:
       parameters:
@@ -238,15 +242,15 @@ examples:
         "200":
           application/json: {"data": [{"id": "trxn_YGZBY32PBBavYbhL", "customerId": "cus_GqfKXLmg61LURZhB", "object": "transaction", "environment": "development", "type": "payment", "amount": "1000", "currency": "KES", "status": "completed", "phoneNumber": "254712345678", "metadata": {}, "failureReason": null, "createdAt": "2021-01-01T00:00:00Z", "paidAt": "2021-01-01T00:00:00Z", "failedAt": null}], "next_cursor": "eyJpZCI6IjEyMyJ9", "limit": 10}
         "401":
-          application/json: {"error": {"code": "missing_api_key", "status": 401, "message": "Missing API key in the authorization header."}}
+          application/json: {"error": {"status": 401, "code": "missing_api_key", "message": "Missing API key in the authorization header."}}
         "403":
-          application/json: {"error": {"code": "invalid_api_key", "status": 403, "message": "API key is invalid."}}
+          application/json: {"error": {"status": 403, "code": "invalid_api_key", "message": "API key is invalid."}}
         "422":
-          application/json: {"error": {"code": "validation_error", "status": 422, "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format"}, {"field": "name", "message": "Name is required"}]}}
+          application/json: {"error": {"status": 422, "code": "validation_error", "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format", "expected": "valid_email"}, {"field": "age", "message": "Expected number, received string", "expected": "number"}]}}
         "429":
-          application/json: {"error": {"code": "too_many_requests", "status": 429, "message": "Too many requests, please try again later."}}
+          application/json: {"error": {"status": 429, "code": "too_many_requests", "message": "Too many requests, please try again later."}}
         "500":
-          application/json: {"error": {"code": "internal_server_error", "status": 500, "message": "An unexpected error occurred."}}
+          application/json: {"error": {"status": 500, "code": "internal_server_error", "message": "An unexpected error occurred."}}
   getTransaction:
     speakeasy-default-get-transaction:
       parameters:
@@ -256,15 +260,15 @@ examples:
         "200":
           application/json: {"id": "trxn_YGZBY32PBBavYbhL", "customerId": "cus_GqfKXLmg61LURZhB", "object": "transaction", "environment": "development", "type": "payment", "amount": "1000", "currency": "KES", "status": "completed", "phoneNumber": "254712345678", "metadata": {}, "failureReason": null, "createdAt": "2021-01-01T00:00:00Z", "paidAt": "2021-01-01T00:00:00Z", "failedAt": null}
         "401":
-          application/json: {"error": {"code": "missing_api_key", "status": 401, "message": "Missing API key in the authorization header."}}
+          application/json: {"error": {"status": 401, "code": "missing_api_key", "message": "Missing API key in the authorization header."}}
         "403":
-          application/json: {"error": {"code": "invalid_api_key", "status": 403, "message": "API key is invalid."}}
+          application/json: {"error": {"status": 403, "code": "invalid_api_key", "message": "API key is invalid."}}
         "404":
-          application/json: {"error": {"code": "not_found", "status": 404, "message": "The requested endpoint does not exist."}}
+          application/json: {"error": {"status": 404, "code": "not_found", "message": "The requested endpoint does not exist."}}
         "422":
-          application/json: {"error": {"code": "validation_error", "status": 422, "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format"}, {"field": "name", "message": "Name is required"}]}}
+          application/json: {"error": {"status": 422, "code": "validation_error", "message": "We found an error with one or more fields in the request.", "validation": [{"field": "email", "message": "Invalid email format", "expected": "valid_email"}, {"field": "age", "message": "Expected number, received string", "expected": "number"}]}}
         "429":
-          application/json: {"error": {"code": "too_many_requests", "status": 429, "message": "Too many requests, please try again later."}}
+          application/json: {"error": {"status": 429, "code": "too_many_requests", "message": "Too many requests, please try again later."}}
         "500":
-          application/json: {"error": {"code": "internal_server_error", "status": 500, "message": "An unexpected error occurred."}}
+          application/json: {"error": {"status": 500, "code": "internal_server_error", "message": "An unexpected error occurred."}}
 examplesVersion: 1.0.2
