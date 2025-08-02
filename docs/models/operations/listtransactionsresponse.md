@@ -16,6 +16,7 @@ let value: ListTransactionsResponse = {
         currency: "KES",
         status: "completed",
         phoneNumber: "254712345678",
+        mpesaReceiptNumber: "<value>",
         metadata: {},
         failureReason: null,
         createdAt: "2021-01-01T00:00:00Z",

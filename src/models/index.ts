@@ -8,6 +8,7 @@ export * from "./internalservererror.js";
 export * from "./invalidapikeyerror.js";
 export * from "./missingapikeyerror.js";
 export * from "./notfounderror.js";
+export * from "./paginateddata.js";
 export * from "./security.js";
 export * from "./toomanyrequestserror.js";
 export * from "./transactionresponse.js";

@@ -65,6 +65,7 @@ export type TransactionResponse = {
    * The customer's phone number
    */
   phoneNumber: string;
+  mpesaReceiptNumber: string;
   /**
    * The transaction metadata
    */
@@ -121,6 +122,7 @@ export const TransactionResponse$inboundSchema: z.ZodType<
   currency: z.string(),
   status: Status$inboundSchema,
   phoneNumber: z.string(),
+  mpesaReceiptNumber: z.string(),
   metadata: z.record(z.nullable(z.any())),
   failureReason: z.nullable(z.string()),
   createdAt: z.string(),
@@ -139,6 +141,7 @@ export type TransactionResponse$Outbound = {
   currency: string;
   status: string;
   phoneNumber: string;
+  mpesaReceiptNumber: string;
   metadata: { [k: string]: any | null };
   failureReason: string | null;
   createdAt: string;
@@ -161,6 +164,7 @@ export const TransactionResponse$outboundSchema: z.ZodType<
   currency: z.string(),
   status: Status$outboundSchema,
   phoneNumber: z.string(),
+  mpesaReceiptNumber: z.string(),
   metadata: z.record(z.nullable(z.any())),
   failureReason: z.nullable(z.string()),
   createdAt: z.string(),

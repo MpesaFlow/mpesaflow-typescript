@@ -11,5 +11,5 @@ let value: ListTransactionsSortEnum1 = "amount";
 ## Values
 
 ```typescript
-"id" | "customerId" | "type" | "amount" | "currency" | "status" | "phoneNumber" | "failureReason" | "createdAt" | "paidAt" | "failedAt"
+"id" | "customerId" | "type" | "amount" | "currency" | "status" | "phoneNumber" | "mpesaReceiptNumber" | "failureReason" | "createdAt" | "paidAt" | "failedAt"
 ```

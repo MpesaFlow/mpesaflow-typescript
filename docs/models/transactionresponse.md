@@ -13,6 +13,7 @@ let value: TransactionResponse = {
   currency: "KES",
   status: "completed",
   phoneNumber: "254712345678",
+  mpesaReceiptNumber: "<value>",
   metadata: {},
   failureReason: null,
   createdAt: "2021-01-01T00:00:00Z",
@@ -34,6 +35,7 @@ let value: TransactionResponse = {
 | `currency`                                             | *string*                                               | :heavy_check_mark:                                     | The transaction currency                               | KES                                                    |
 | `status`                                               | [models.Status](../models/status.md)                   | :heavy_check_mark:                                     | The transaction status                                 | completed                                              |
 | `phoneNumber`                                          | *string*                                               | :heavy_check_mark:                                     | The customer's phone number                            | 254712345678                                           |
+| `mpesaReceiptNumber`                                   | *string*                                               | :heavy_check_mark:                                     | N/A                                                    |                                                        |
 | `metadata`                                             | Record<string, *any*>                                  | :heavy_check_mark:                                     | The transaction metadata                               | {<br/>"orderId": "abc123",<br/>"campaign": "giveback-2025"<br/>} |
 | `failureReason`                                        | *string*                                               | :heavy_check_mark:                                     | The transaction decline reason                         | Insufficient balance                                   |
 | `createdAt`                                            | *string*                                               | :heavy_check_mark:                                     | The transaction creation date in ISO 8601 format       | 2021-01-01T00:00:00Z                                   |
