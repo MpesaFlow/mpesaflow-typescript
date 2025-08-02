@@ -33,6 +33,7 @@ export const ListTransactionsSortEnum1 = {
   Currency: "currency",
   Status: "status",
   PhoneNumber: "phoneNumber",
+  MpesaReceiptNumber: "mpesaReceiptNumber",
   FailureReason: "failureReason",
   CreatedAt: "createdAt",
   PaidAt: "paidAt",
@@ -47,15 +48,45 @@ export type ListTransactionsSortUnion =
   | ListTransactionsSortEnum2;
 
 export type ListTransactionsRequest = {
+  /**
+   * Search for a transaction by customer name, phone number, or transaction id
+   */
   q?: string | undefined;
+  /**
+   * Cursor for pagination, representing the last item from the previous page
+   */
   cursor?: string | undefined;
+  /**
+   * The customer id
+   */
   customerId?: string | undefined;
+  /**
+   * Array of transaction statuses to filter by. Available statuses: 'pending', 'completed', 'failed'
+   */
   statuses?: Array<ListTransactionsStatus> | undefined;
+  /**
+   * Amount range as [min, max] to filter transactions by monetary value
+   */
   amountRange?: Array<number | null> | null | undefined;
+  /**
+   * Array of specific amounts (as strings) to filter transactions by exact values
+   */
   amount?: Array<string> | null | undefined;
+  /**
+   * The number of transactions to return (1-100)
+   */
   limit?: number | undefined;
+  /**
+   * Start date (inclusive) for filtering transactions in ISO 8601 format
+   */
   start?: string | null | undefined;
+  /**
+   * End date (inclusive) for filtering transactions in ISO 8601 format
+   */
   end?: string | null | undefined;
+  /**
+   * Sorting order as a tuple: [field, direction]. Available fields: id, amount, status, createdAt, paidAt, failedAt. Direction must be: asc, desc
+   */
   sort?:
     | Array<ListTransactionsSortEnum1 | ListTransactionsSortEnum2>
     | undefined;

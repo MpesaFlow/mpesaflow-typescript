@@ -16,6 +16,7 @@ List of all transactions in the business
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTransactions" method="get" path="/transactions" -->
 ```typescript
 import { MpesaFlow } from "@mpesaflow/sdk";
 
@@ -137,6 +138,7 @@ Get a transaction in the  business
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTransaction" method="get" path="/transactions/{id}" -->
 ```typescript
 import { MpesaFlow } from "@mpesaflow/sdk";
 

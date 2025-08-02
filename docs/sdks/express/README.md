@@ -15,6 +15,7 @@ Simulate Daraja express payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="express" method="post" path="/express" -->
 ```typescript
 import { MpesaFlow } from "@mpesaflow/sdk";
 

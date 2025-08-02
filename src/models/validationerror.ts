@@ -16,17 +16,21 @@ export type Validation = {
    * The validation error message for the field
    */
   message: string;
+  /**
+   * The expected type or format for the field
+   */
+  expected: string;
 };
 
 export type ValidationErrorError = {
   /**
-   * Machine-readable error name
-   */
-  code: string;
-  /**
    * HTTP status code of the error
    */
   status: number;
+  /**
+   * Machine-readable error name
+   */
+  code: string;
   /**
    * Human-readable error message
    */
@@ -45,12 +49,14 @@ export const Validation$inboundSchema: z.ZodType<
 > = z.object({
   field: z.string(),
   message: z.string(),
+  expected: z.string(),
 });
 
 /** @internal */
 export type Validation$Outbound = {
   field: string;
   message: string;
+  expected: string;
 };
 
 /** @internal */
@@ -61,6 +67,7 @@ export const Validation$outboundSchema: z.ZodType<
 > = z.object({
   field: z.string(),
   message: z.string(),
+  expected: z.string(),
 });
 
 /**
@@ -96,16 +103,16 @@ export const ValidationErrorError$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  code: z.string(),
   status: z.number(),
+  code: z.string(),
   message: z.string(),
   validation: z.array(z.lazy(() => Validation$inboundSchema)),
 });
 
 /** @internal */
 export type ValidationErrorError$Outbound = {
-  code: string;
   status: number;
+  code: string;
   message: string;
   validation: Array<Validation$Outbound>;
 };
@@ -116,8 +123,8 @@ export const ValidationErrorError$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ValidationErrorError
 > = z.object({
-  code: z.string(),
   status: z.number(),
+  code: z.string(),
   message: z.string(),
   validation: z.array(z.lazy(() => Validation$outboundSchema)),
 });

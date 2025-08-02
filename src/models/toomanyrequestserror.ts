@@ -9,13 +9,13 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type TooManyRequestsErrorError = {
   /**
-   * Machine-readable error name
-   */
-  code: string;
-  /**
    * HTTP status code of the error
    */
   status: number;
+  /**
+   * Machine-readable error name
+   */
+  code: string;
   /**
    * Human-readable error message
    */
@@ -28,15 +28,15 @@ export const TooManyRequestsErrorError$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  code: z.string(),
   status: z.number(),
+  code: z.string(),
   message: z.string(),
 });
 
 /** @internal */
 export type TooManyRequestsErrorError$Outbound = {
-  code: string;
   status: number;
+  code: string;
   message: string;
 };
 
@@ -46,8 +46,8 @@ export const TooManyRequestsErrorError$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   TooManyRequestsErrorError
 > = z.object({
-  code: z.string(),
   status: z.number(),
+  code: z.string(),
   message: z.string(),
 });
 

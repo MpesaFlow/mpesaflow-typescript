@@ -16,6 +16,7 @@ Get a list of all customers in the business
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCustomers" method="get" path="/customers" -->
 ```typescript
 import { MpesaFlow } from "@mpesaflow/sdk";
 
@@ -111,6 +112,7 @@ Get a customer by their ID in the business
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCustomer" method="get" path="/customers/{id}" -->
 ```typescript
 import { MpesaFlow } from "@mpesaflow/sdk";
 
