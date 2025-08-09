@@ -45,34 +45,30 @@ MpesaFlow API: MpesaFlow streamlines online M-Pesa payments for businesses and d
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-> [!TIP]
-> To finish publishing your SDK to npm and others you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
-
-
 The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), [bun](https://bun.sh/) or [yarn](https://classic.yarnpkg.com/en/) package managers.
 
 ### NPM
 
 ```bash
-npm add <UNSET>
+npm add @mpesaflow/sdk
 ```
 
 ### PNPM
 
 ```bash
-pnpm add <UNSET>
+pnpm add @mpesaflow/sdk
 ```
 
 ### Bun
 
 ```bash
-bun add <UNSET>
+bun add @mpesaflow/sdk
 ```
 
 ### Yarn
 
 ```bash
-yarn add <UNSET> zod
+yarn add @mpesaflow/sdk zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
@@ -101,15 +97,16 @@ const mpesaFlow = new MpesaFlow({
 });
 
 async function run() {
-  const result = await mpesaFlow.express.pay({
-    phoneNumber: "254712345678",
-    amount: "100.00",
-    transactionDesc: "mpesaflow",
-    customerName: "John Doe",
-    accountReference: "mpesaflow",
+  const result = await mpesaFlow.customers.list({
+    q: "John Doe",
+    cursor: "eyJpZCI6IjEyMyJ9",
+    start: "2024-04-01T00:00:00.000Z",
+    end: "2024-04-30T23:59:59.999Z",
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
@@ -142,10 +139,6 @@ async function run() {
     cursor: "eyJpZCI6IjEyMyJ9",
     start: "2024-04-01T00:00:00.000Z",
     end: "2024-04-30T23:59:59.999Z",
-    sort: [
-      "createdAt",
-      "desc",
-    ],
   });
 
   for await (const page of result) {
@@ -167,17 +160,11 @@ run();
 ### [customers](docs/sdks/customers/README.md)
 
 * [list](docs/sdks/customers/README.md#list) - List all customers
+* [create](docs/sdks/customers/README.md#create) - Create a customer
 * [getOne](docs/sdks/customers/README.md#getone) - Get a customer
+* [update](docs/sdks/customers/README.md#update) - Update a customer
+* [delete](docs/sdks/customers/README.md#delete) - Delete a customer
 
-### [express](docs/sdks/express/README.md)
-
-* [pay](docs/sdks/express/README.md#pay) - Simulate Daraja express payment
-
-
-### [transactions](docs/sdks/transactions/README.md)
-
-* [list](docs/sdks/transactions/README.md#list) - List Transactions
-* [getOne](docs/sdks/transactions/README.md#getone) - Get Transaction
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -197,11 +184,11 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`customersCreate`](docs/sdks/customers/README.md#create) - Create a customer
+- [`customersDelete`](docs/sdks/customers/README.md#delete) - Delete a customer
 - [`customersGetOne`](docs/sdks/customers/README.md#getone) - Get a customer
 - [`customersList`](docs/sdks/customers/README.md#list) - List all customers
-- [`expressPay`](docs/sdks/express/README.md#pay) - Simulate Daraja express payment
-- [`transactionsGetOne`](docs/sdks/transactions/README.md#getone) - Get Transaction
-- [`transactionsList`](docs/sdks/transactions/README.md#list) - List Transactions
+- [`customersUpdate`](docs/sdks/customers/README.md#update) - Update a customer
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
@@ -231,10 +218,6 @@ async function run() {
     cursor: "eyJpZCI6IjEyMyJ9",
     start: "2024-04-01T00:00:00.000Z",
     end: "2024-04-30T23:59:59.999Z",
-    sort: [
-      "createdAt",
-      "desc",
-    ],
   });
 
   for await (const page of result) {
@@ -266,10 +249,6 @@ async function run() {
     cursor: "eyJpZCI6IjEyMyJ9",
     start: "2024-04-01T00:00:00.000Z",
     end: "2024-04-30T23:59:59.999Z",
-    sort: [
-      "createdAt",
-      "desc",
-    ],
   }, {
     retries: {
       strategy: "backoff",
@@ -316,10 +295,6 @@ async function run() {
     cursor: "eyJpZCI6IjEyMyJ9",
     start: "2024-04-01T00:00:00.000Z",
     end: "2024-04-30T23:59:59.999Z",
-    sort: [
-      "createdAt",
-      "desc",
-    ],
   });
 
   for await (const page of result) {
@@ -362,10 +337,6 @@ async function run() {
       cursor: "eyJpZCI6IjEyMyJ9",
       start: "2024-04-01T00:00:00.000Z",
       end: "2024-04-30T23:59:59.999Z",
-      sort: [
-        "createdAt",
-        "desc",
-      ],
     });
 
     for await (const page of result) {
@@ -395,10 +366,10 @@ run();
 **Primary errors:**
 * [`MpesaFlowError`](./src/models/errors/mpesaflowerror.ts): The base class for HTTP error responses.
   * [`MissingApiKeyError`](./src/models/errors/missingapikeyerror.ts): Missing API Key. Status code `401`.
-  * [`InvalidApiKeyError`](./src/models/errors/invalidapikeyerror.ts): Status code `403`.
+  * [`InvalidApiKeyError`](./src/models/errors/invalidapikeyerror.ts): Invalid API Key. Status code `403`.
   * [`ValidationError`](./src/models/errors/validationerror.ts): Status code `422`.
   * [`TooManyRequestsError`](./src/models/errors/toomanyrequestserror.ts): Too many Requests. Status code `429`.
-  * [`InternalServerError`](./src/models/errors/internalservererror.ts): Status code `500`.
+  * [`InternalServerError`](./src/models/errors/internalservererror.ts): Internal Sever Error. Status code `500`.
 
 <details><summary>Less common errors (7)</summary>
 
@@ -413,7 +384,7 @@ run();
 
 
 **Inherit from [`MpesaFlowError`](./src/models/errors/mpesaflowerror.ts)**:
-* [`NotFoundError`](./src/models/errors/notfounderror.ts): Status code `404`. Applicable to 2 of 5 methods.*
+* [`NotFoundError`](./src/models/errors/notfounderror.ts): Customer Not Found. Status code `404`. Applicable to 2 of 5 methods.*
 * [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
 
 </details>
@@ -441,10 +412,6 @@ async function run() {
     cursor: "eyJpZCI6IjEyMyJ9",
     start: "2024-04-01T00:00:00.000Z",
     end: "2024-04-30T23:59:59.999Z",
-    sort: [
-      "createdAt",
-      "desc",
-    ],
   });
 
   for await (const page of result) {

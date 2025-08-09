@@ -10,147 +10,86 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as models from "../index.js";
 
-export const ListCustomersSortEnum2 = {
+export const SortOrder = {
   Asc: "asc",
   Desc: "desc",
 } as const;
-export type ListCustomersSortEnum2 = ClosedEnum<typeof ListCustomersSortEnum2>;
+export type SortOrder = ClosedEnum<typeof SortOrder>;
 
-export const ListCustomersSortEnum1 = {
+export const SortField = {
   Id: "id",
   Name: "name",
   PhoneNumber: "phoneNumber",
   CreatedAt: "createdAt",
   LastActiveAt: "lastActiveAt",
 } as const;
-export type ListCustomersSortEnum1 = ClosedEnum<typeof ListCustomersSortEnum1>;
-
-export type ListCustomersSortUnion =
-  | ListCustomersSortEnum1
-  | ListCustomersSortEnum2;
+export type SortField = ClosedEnum<typeof SortField>;
 
 export type ListCustomersRequest = {
-  q?: string | undefined;
-  cursor?: string | undefined;
-  limit?: number | undefined;
-  start?: string | null | undefined;
-  end?: string | null | undefined;
-  sort?: Array<ListCustomersSortEnum1 | ListCustomersSortEnum2> | undefined;
-};
-
-/**
- * List of all customers
- */
-export type ListCustomersResponseBody = {
-  data: Array<models.CustomerResponse>;
+  /**
+   * Search for a customer by name or phone number
+   */
+  q?: string | null | undefined;
   /**
    * Cursor for pagination, representing the last item from the previous page
    */
-  nextCursor: string | null;
+  cursor?: string | null | undefined;
   /**
-   * The number of data to return (1-100)
+   * The number of customers to return (1-100)
    */
   limit?: number | undefined;
+  /**
+   * Start date (inclusive) for filtering customers in ISO 8601 format
+   */
+  start?: string | null | undefined;
+  /**
+   * End date (inclusive) for filtering customers in ISO 8601 format
+   */
+  end?: string | null | undefined;
+  sortOrder?: SortOrder | undefined;
+  sortField?: SortField | undefined;
 };
 
 export type ListCustomersResponse = {
-  result: ListCustomersResponseBody;
+  result: models.PaginatedData;
 };
 
 /** @internal */
-export const ListCustomersSortEnum2$inboundSchema: z.ZodNativeEnum<
-  typeof ListCustomersSortEnum2
-> = z.nativeEnum(ListCustomersSortEnum2);
+export const SortOrder$inboundSchema: z.ZodNativeEnum<typeof SortOrder> = z
+  .nativeEnum(SortOrder);
 
 /** @internal */
-export const ListCustomersSortEnum2$outboundSchema: z.ZodNativeEnum<
-  typeof ListCustomersSortEnum2
-> = ListCustomersSortEnum2$inboundSchema;
+export const SortOrder$outboundSchema: z.ZodNativeEnum<typeof SortOrder> =
+  SortOrder$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ListCustomersSortEnum2$ {
-  /** @deprecated use `ListCustomersSortEnum2$inboundSchema` instead. */
-  export const inboundSchema = ListCustomersSortEnum2$inboundSchema;
-  /** @deprecated use `ListCustomersSortEnum2$outboundSchema` instead. */
-  export const outboundSchema = ListCustomersSortEnum2$outboundSchema;
+export namespace SortOrder$ {
+  /** @deprecated use `SortOrder$inboundSchema` instead. */
+  export const inboundSchema = SortOrder$inboundSchema;
+  /** @deprecated use `SortOrder$outboundSchema` instead. */
+  export const outboundSchema = SortOrder$outboundSchema;
 }
 
 /** @internal */
-export const ListCustomersSortEnum1$inboundSchema: z.ZodNativeEnum<
-  typeof ListCustomersSortEnum1
-> = z.nativeEnum(ListCustomersSortEnum1);
+export const SortField$inboundSchema: z.ZodNativeEnum<typeof SortField> = z
+  .nativeEnum(SortField);
 
 /** @internal */
-export const ListCustomersSortEnum1$outboundSchema: z.ZodNativeEnum<
-  typeof ListCustomersSortEnum1
-> = ListCustomersSortEnum1$inboundSchema;
+export const SortField$outboundSchema: z.ZodNativeEnum<typeof SortField> =
+  SortField$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ListCustomersSortEnum1$ {
-  /** @deprecated use `ListCustomersSortEnum1$inboundSchema` instead. */
-  export const inboundSchema = ListCustomersSortEnum1$inboundSchema;
-  /** @deprecated use `ListCustomersSortEnum1$outboundSchema` instead. */
-  export const outboundSchema = ListCustomersSortEnum1$outboundSchema;
-}
-
-/** @internal */
-export const ListCustomersSortUnion$inboundSchema: z.ZodType<
-  ListCustomersSortUnion,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  ListCustomersSortEnum1$inboundSchema,
-  ListCustomersSortEnum2$inboundSchema,
-]);
-
-/** @internal */
-export type ListCustomersSortUnion$Outbound = string | string;
-
-/** @internal */
-export const ListCustomersSortUnion$outboundSchema: z.ZodType<
-  ListCustomersSortUnion$Outbound,
-  z.ZodTypeDef,
-  ListCustomersSortUnion
-> = z.union([
-  ListCustomersSortEnum1$outboundSchema,
-  ListCustomersSortEnum2$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCustomersSortUnion$ {
-  /** @deprecated use `ListCustomersSortUnion$inboundSchema` instead. */
-  export const inboundSchema = ListCustomersSortUnion$inboundSchema;
-  /** @deprecated use `ListCustomersSortUnion$outboundSchema` instead. */
-  export const outboundSchema = ListCustomersSortUnion$outboundSchema;
-  /** @deprecated use `ListCustomersSortUnion$Outbound` instead. */
-  export type Outbound = ListCustomersSortUnion$Outbound;
-}
-
-export function listCustomersSortUnionToJSON(
-  listCustomersSortUnion: ListCustomersSortUnion,
-): string {
-  return JSON.stringify(
-    ListCustomersSortUnion$outboundSchema.parse(listCustomersSortUnion),
-  );
-}
-
-export function listCustomersSortUnionFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCustomersSortUnion, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCustomersSortUnion$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCustomersSortUnion' from JSON`,
-  );
+export namespace SortField$ {
+  /** @deprecated use `SortField$inboundSchema` instead. */
+  export const inboundSchema = SortField$inboundSchema;
+  /** @deprecated use `SortField$outboundSchema` instead. */
+  export const outboundSchema = SortField$outboundSchema;
 }
 
 /** @internal */
@@ -159,27 +98,24 @@ export const ListCustomersRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  q: z.string().optional(),
-  cursor: z.string().optional(),
+  q: z.nullable(z.string()).optional(),
+  cursor: z.nullable(z.string()).optional(),
   limit: z.number().default(10),
   start: z.nullable(z.string()).optional(),
   end: z.nullable(z.string()).optional(),
-  sort: z.array(
-    z.union([
-      ListCustomersSortEnum1$inboundSchema,
-      ListCustomersSortEnum2$inboundSchema,
-    ]),
-  ).optional(),
+  sortOrder: SortOrder$inboundSchema.default("desc"),
+  sortField: SortField$inboundSchema.default("createdAt"),
 });
 
 /** @internal */
 export type ListCustomersRequest$Outbound = {
-  q?: string | undefined;
-  cursor?: string | undefined;
+  q?: string | null | undefined;
+  cursor?: string | null | undefined;
   limit: number;
   start?: string | null | undefined;
   end?: string | null | undefined;
-  sort?: Array<string | string> | undefined;
+  sortOrder: string;
+  sortField: string;
 };
 
 /** @internal */
@@ -188,17 +124,13 @@ export const ListCustomersRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListCustomersRequest
 > = z.object({
-  q: z.string().optional(),
-  cursor: z.string().optional(),
+  q: z.nullable(z.string()).optional(),
+  cursor: z.nullable(z.string()).optional(),
   limit: z.number().default(10),
   start: z.nullable(z.string()).optional(),
   end: z.nullable(z.string()).optional(),
-  sort: z.array(
-    z.union([
-      ListCustomersSortEnum1$outboundSchema,
-      ListCustomersSortEnum2$outboundSchema,
-    ]),
-  ).optional(),
+  sortOrder: SortOrder$outboundSchema.default("desc"),
+  sortField: SortField$outboundSchema.default("createdAt"),
 });
 
 /**
@@ -233,80 +165,12 @@ export function listCustomersRequestFromJSON(
 }
 
 /** @internal */
-export const ListCustomersResponseBody$inboundSchema: z.ZodType<
-  ListCustomersResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  data: z.array(models.CustomerResponse$inboundSchema),
-  next_cursor: z.nullable(z.string()),
-  limit: z.number().default(10),
-}).transform((v) => {
-  return remap$(v, {
-    "next_cursor": "nextCursor",
-  });
-});
-
-/** @internal */
-export type ListCustomersResponseBody$Outbound = {
-  data: Array<models.CustomerResponse$Outbound>;
-  next_cursor: string | null;
-  limit: number;
-};
-
-/** @internal */
-export const ListCustomersResponseBody$outboundSchema: z.ZodType<
-  ListCustomersResponseBody$Outbound,
-  z.ZodTypeDef,
-  ListCustomersResponseBody
-> = z.object({
-  data: z.array(models.CustomerResponse$outboundSchema),
-  nextCursor: z.nullable(z.string()),
-  limit: z.number().default(10),
-}).transform((v) => {
-  return remap$(v, {
-    nextCursor: "next_cursor",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCustomersResponseBody$ {
-  /** @deprecated use `ListCustomersResponseBody$inboundSchema` instead. */
-  export const inboundSchema = ListCustomersResponseBody$inboundSchema;
-  /** @deprecated use `ListCustomersResponseBody$outboundSchema` instead. */
-  export const outboundSchema = ListCustomersResponseBody$outboundSchema;
-  /** @deprecated use `ListCustomersResponseBody$Outbound` instead. */
-  export type Outbound = ListCustomersResponseBody$Outbound;
-}
-
-export function listCustomersResponseBodyToJSON(
-  listCustomersResponseBody: ListCustomersResponseBody,
-): string {
-  return JSON.stringify(
-    ListCustomersResponseBody$outboundSchema.parse(listCustomersResponseBody),
-  );
-}
-
-export function listCustomersResponseBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCustomersResponseBody, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCustomersResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCustomersResponseBody' from JSON`,
-  );
-}
-
-/** @internal */
 export const ListCustomersResponse$inboundSchema: z.ZodType<
   ListCustomersResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Result: z.lazy(() => ListCustomersResponseBody$inboundSchema),
+  Result: models.PaginatedData$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
     "Result": "result",
@@ -315,7 +179,7 @@ export const ListCustomersResponse$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListCustomersResponse$Outbound = {
-  Result: ListCustomersResponseBody$Outbound;
+  Result: models.PaginatedData$Outbound;
 };
 
 /** @internal */
@@ -324,7 +188,7 @@ export const ListCustomersResponse$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListCustomersResponse
 > = z.object({
-  result: z.lazy(() => ListCustomersResponseBody$outboundSchema),
+  result: models.PaginatedData$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
     result: "Result",

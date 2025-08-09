@@ -4,22 +4,10 @@
 
 import { ClientSDK } from "../lib/sdks.js";
 import { Customers } from "./customers.js";
-import { Express } from "./express.js";
-import { Transactions } from "./transactions.js";
 
 export class MpesaFlow extends ClientSDK {
   private _customers?: Customers;
   get customers(): Customers {
     return (this._customers ??= new Customers(this._options));
-  }
-
-  private _express?: Express;
-  get express(): Express {
-    return (this._express ??= new Express(this._options));
-  }
-
-  private _transactions?: Transactions;
-  get transactions(): Transactions {
-    return (this._transactions ??= new Transactions(this._options));
   }
 }

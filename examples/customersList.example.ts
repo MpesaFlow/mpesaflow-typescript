@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @mpesaflow/sdk SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx expressPay.ts
+ * npm run build && npx tsx customersList.ts
  */
 
 import { MpesaFlow } from "@mpesaflow/sdk";
@@ -18,15 +18,16 @@ const mpesaFlow = new MpesaFlow({
 });
 
 async function main() {
-  const result = await mpesaFlow.pay({
-    phoneNumber: "254712345678",
-    amount: "100.00",
-    transactionDesc: "mpesaflow",
-    customerName: "John Doe",
-    accountReference: "mpesaflow",
+  const result = await mpesaFlow.list({
+    q: "John Doe",
+    cursor: "eyJpZCI6IjEyMyJ9",
+    start: "2024-04-01T00:00:00.000Z",
+    end: "2024-04-30T23:59:59.999Z",
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 main().catch(console.error);

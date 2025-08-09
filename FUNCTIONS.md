@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { MpesaFlowCore } from "@mpesaflow/sdk/core.js";
-import { expressPay } from "@mpesaflow/sdk/funcs/expressPay.js";
+import { customersList } from "@mpesaflow/sdk/funcs/customersList.js";
 
 // Use `MpesaFlowCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -29,18 +29,19 @@ const mpesaFlow = new MpesaFlowCore({
 });
 
 async function run() {
-  const res = await expressPay(mpesaFlow, {
-    phoneNumber: "254712345678",
-    amount: "100.00",
-    transactionDesc: "mpesaflow",
-    customerName: "John Doe",
-    accountReference: "mpesaflow",
+  const res = await customersList(mpesaFlow, {
+    q: "John Doe",
+    cursor: "eyJpZCI6IjEyMyJ9",
+    start: "2024-04-01T00:00:00.000Z",
+    end: "2024-04-30T23:59:59.999Z",
   });
   if (res.ok) {
     const { value: result } = res;
-    console.log(result);
+    for await (const page of result) {
+    console.log(page);
+  }
   } else {
-    console.log("expressPay failed:", res.error);
+    console.log("customersList failed:", res.error);
   }
 }
 

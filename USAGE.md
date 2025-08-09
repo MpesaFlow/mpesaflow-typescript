@@ -7,15 +7,16 @@ const mpesaFlow = new MpesaFlow({
 });
 
 async function run() {
-  const result = await mpesaFlow.express.pay({
-    phoneNumber: "254712345678",
-    amount: "100.00",
-    transactionDesc: "mpesaflow",
-    customerName: "John Doe",
-    accountReference: "mpesaflow",
+  const result = await mpesaFlow.customers.list({
+    q: "John Doe",
+    cursor: "eyJpZCI6IjEyMyJ9",
+    start: "2024-04-01T00:00:00.000Z",
+    end: "2024-04-30T23:59:59.999Z",
   });
 
-  console.log(result);
+  for await (const page of result) {
+    console.log(page);
+  }
 }
 
 run();
