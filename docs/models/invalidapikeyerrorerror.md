@@ -6,8 +6,8 @@
 import { InvalidApiKeyErrorError } from "@mpesaflow/sdk/models";
 
 let value: InvalidApiKeyErrorError = {
-  code: "invalid_api_key",
   status: 403,
+  code: "invalid_api_key",
   message: "API key is invalid.",
 };
 ```
@@ -16,6 +16,6 @@ let value: InvalidApiKeyErrorError = {
 
 | Field                         | Type                          | Required                      | Description                   | Example                       |
 | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
-| `code`                        | *string*                      | :heavy_check_mark:            | Machine-readable error name   | invalid_api_key               |
 | `status`                      | *number*                      | :heavy_check_mark:            | HTTP status code of the error | 403                           |
+| `code`                        | *string*                      | :heavy_check_mark:            | Machine-readable error name   | invalid_api_key               |
 | `message`                     | *string*                      | :heavy_check_mark:            | Human-readable error message  | API key is invalid.           |

@@ -9,13 +9,13 @@ import { SDKValidationError } from "./errors/sdkvalidationerror.js";
 
 export type InvalidApiKeyErrorError = {
   /**
-   * Machine-readable error name
-   */
-  code: string;
-  /**
    * HTTP status code of the error
    */
   status: number;
+  /**
+   * Machine-readable error name
+   */
+  code: string;
   /**
    * Human-readable error message
    */
@@ -28,15 +28,15 @@ export const InvalidApiKeyErrorError$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  code: z.string(),
   status: z.number(),
+  code: z.string(),
   message: z.string(),
 });
 
 /** @internal */
 export type InvalidApiKeyErrorError$Outbound = {
-  code: string;
   status: number;
+  code: string;
   message: string;
 };
 
@@ -46,8 +46,8 @@ export const InvalidApiKeyErrorError$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   InvalidApiKeyErrorError
 > = z.object({
-  code: z.string(),
   status: z.number(),
+  code: z.string(),
   message: z.string(),
 });
 

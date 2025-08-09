@@ -21,23 +21,24 @@ import * as errors from "../models/errors/index.js";
 import { MpesaFlowError } from "../models/errors/mpesaflowerror.js";
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
+import * as models from "../models/index.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Simulate Daraja express payment
+ * Create a customer
  *
  * @remarks
- * Simulate Daraja express payment
+ * Create a customer in the business
  */
-export function expressPay(
+export function customersCreate(
   client: MpesaFlowCore,
-  request: operations.ExpressRequest,
+  request: operations.CreateRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.ExpressResponse,
+    models.CustomerResponse,
     | errors.MissingApiKeyError
     | errors.InvalidApiKeyError
     | errors.ValidationError
@@ -62,12 +63,12 @@ export function expressPay(
 
 async function $do(
   client: MpesaFlowCore,
-  request: operations.ExpressRequest,
+  request: operations.CreateRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.ExpressResponse,
+      models.CustomerResponse,
       | errors.MissingApiKeyError
       | errors.InvalidApiKeyError
       | errors.ValidationError
@@ -87,7 +88,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ExpressRequest$outboundSchema.parse(value),
+    (value) => operations.CreateRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -96,7 +97,7 @@ async function $do(
   const payload = parsed.value;
   const body = encodeJSON("body", payload, { explode: true });
 
-  const path = pathToFunc("/express")();
+  const path = pathToFunc("/customers")();
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -110,7 +111,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "express",
+    operationID: "create",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -163,7 +164,7 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.ExpressResponse,
+    models.CustomerResponse,
     | errors.MissingApiKeyError
     | errors.InvalidApiKeyError
     | errors.ValidationError
@@ -178,7 +179,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, operations.ExpressResponse$inboundSchema),
+    M.json(200, models.CustomerResponse$inboundSchema),
     M.jsonErr(401, errors.MissingApiKeyError$inboundSchema),
     M.jsonErr(403, errors.InvalidApiKeyError$inboundSchema),
     M.jsonErr(422, errors.ValidationError$inboundSchema),

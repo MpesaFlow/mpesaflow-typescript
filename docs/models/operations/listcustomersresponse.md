@@ -17,13 +17,17 @@ let value: ListCustomersResponse = {
         lastActiveAt: "2021-01-01T00:00:00Z",
       },
     ],
-    nextCursor: "eyJpZCI6IjEyMyJ9",
+    meta: {
+      cursor: "eyJpZCI6IjEyMyJ9",
+      hasPreviousPage: false,
+      hasNextPage: true,
+    },
   },
 };
 ```
 
 ## Fields
 
-| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `result`                                                                                     | [operations.ListCustomersResponseBody](../../models/operations/listcustomersresponsebody.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| Field                                                 | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `result`                                              | [models.PaginatedData](../../models/paginateddata.md) | :heavy_check_mark:                                    | N/A                                                   |

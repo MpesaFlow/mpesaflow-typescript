@@ -117,7 +117,8 @@ async function $do(
     "end": payload?.end,
     "limit": payload?.limit,
     "q": payload?.q,
-    "sort": payload?.sort,
+    "sortField": payload?.sortField,
+    "sortOrder": payload?.sortOrder,
     "start": payload?.start,
   });
 

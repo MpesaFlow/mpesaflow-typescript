@@ -1,11 +1,11 @@
-# GetCustomerRequest
+# DeleteRequest
 
 ## Example Usage
 
 ```typescript
-import { GetCustomerRequest } from "@mpesaflow/sdk/models/operations";
+import { DeleteRequest } from "@mpesaflow/sdk/models/operations";
 
-let value: GetCustomerRequest = {
+let value: DeleteRequest = {
   id: "cus_GqfKXLmg61LURZhB",
 };
 ```

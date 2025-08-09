@@ -3,7 +3,7 @@
  */
 
 import { MpesaFlowCore } from "../core.js";
-import { encodeSimple } from "../lib/encodings.js";
+import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -27,21 +27,20 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Get Transaction
+ * Update a customer
  *
  * @remarks
- * Get a transaction in the  business
+ * Update a customer in the business
  */
-export function transactionsGetOne(
+export function customersUpdate(
   client: MpesaFlowCore,
-  request: operations.GetTransactionRequest,
+  request: operations.UpdateRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    models.TransactionResponse,
+    models.CustomerResponse,
     | errors.MissingApiKeyError
     | errors.InvalidApiKeyError
-    | errors.NotFoundError
     | errors.ValidationError
     | errors.TooManyRequestsError
     | errors.InternalServerError
@@ -64,15 +63,14 @@ export function transactionsGetOne(
 
 async function $do(
   client: MpesaFlowCore,
-  request: operations.GetTransactionRequest,
+  request: operations.UpdateRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      models.TransactionResponse,
+      models.CustomerResponse,
       | errors.MissingApiKeyError
       | errors.InvalidApiKeyError
-      | errors.NotFoundError
       | errors.ValidationError
       | errors.TooManyRequestsError
       | errors.InternalServerError
@@ -90,14 +88,14 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetTransactionRequest$outboundSchema.parse(value),
+    (value) => operations.UpdateRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload.RequestBody, { explode: true });
 
   const pathParams = {
     id: encodeSimple("id", payload.id, {
@@ -106,9 +104,10 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/transactions/{id}")(pathParams);
+  const path = pathToFunc("/customers/{id}")(pathParams);
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -119,7 +118,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getTransaction",
+    operationID: "update",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -143,7 +142,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "PATCH",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
@@ -158,7 +157,7 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: ["401", "403", "404", "422", "429", "4XX", "500", "5XX"],
+    errorCodes: ["401", "403", "422", "429", "4XX", "500", "5XX"],
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });
@@ -172,10 +171,9 @@ async function $do(
   };
 
   const [result] = await M.match<
-    models.TransactionResponse,
+    models.CustomerResponse,
     | errors.MissingApiKeyError
     | errors.InvalidApiKeyError
-    | errors.NotFoundError
     | errors.ValidationError
     | errors.TooManyRequestsError
     | errors.InternalServerError
@@ -188,10 +186,9 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, models.TransactionResponse$inboundSchema),
+    M.json(200, models.CustomerResponse$inboundSchema),
     M.jsonErr(401, errors.MissingApiKeyError$inboundSchema),
     M.jsonErr(403, errors.InvalidApiKeyError$inboundSchema),
-    M.jsonErr(404, errors.NotFoundError$inboundSchema),
     M.jsonErr(422, errors.ValidationError$inboundSchema),
     M.jsonErr(429, errors.TooManyRequestsError$inboundSchema),
     M.jsonErr(500, errors.InternalServerError$inboundSchema),
